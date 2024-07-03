@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Da forca</title>
+    <style>
+        .titulo{
+            text-align: center;
+            font-size: 65px;
+            color: rgb(255, 255, 255);
+            border: 2px solid black;
+        }
+        .buttons{
+            height: 100%;
+            width: 100%;
+            border: 5px solid rgb(219, 174, 114);
+            padding: 17px;
+            background-color: rgb(255, 255, 255);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(1, 80, 12);
+
+        }
+        button{
+            height: 90px;
+            width: 150px;
+            border-radius: 15px;
+            border: solid;
+            font-size: 30px;
+            cursor: pointer;
+            top: 25px;
+        }
+        .button:hover{
+            transform: scale(1.1);
+        }
+        body{
+            height: 60vh;
+            background-image: url(https://image.freepik.com/vetores-gratis/padrao-de-textura-de-fundo-de-parede-de-tijolo_212889-296.jpg);
+        }
+        .div{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            height: 70%;
+            width: 70%;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        <h1>JOGO DA FORCA</h1>
+    </div>
+    <div class="div">
+        <div class="main">
+            <div class="buttons">
+                <div>
+                    <div>
+                        <a href=""><button class="button">Jogar</button></a>
+                    </div>
+                    <br>
+                    <div>
+                        <a href=""><button class="button">Sobre</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
