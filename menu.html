@@ -22,22 +22,25 @@
         }
         .titulo{
             font-family: "Sriracha", cursive;
-            text-align: center;
             font-size: 65px;
+            color: white;
+            text-align: center;
             margin-top: -100px;
             margin-bottom: -100px;
-            color: white;
         }
-        .conteiner{
+        .container{
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .main{
-            height: 70%;
+        .quadro{
+            height: 83%;
             width: 70%;
             display: flex;
+            background-image: url(../Jogo-da-Forca/img/quadro.png);
+            background-repeat: no-repeat;
+            background-size:cover;
         }
         .buttons{
             height: 100%;
@@ -45,12 +48,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 23px;
-            background-image: url(../Jogo-da-Forca/img/quadro.png);
-            background-repeat: no-repeat;
-            background-size:cover ;
-            
-
         }
         button{
             height: 90px;
@@ -71,16 +68,16 @@
     <div class="titulo">
         <h1>JOGO DA FORCA</h1>
     </div>
-    <div class="conteiner">
-        <div class="main">
-            <div class="quadro">
+    <div class="container">
+        <div class="quadro">
+            <div class="buttons">
                 <div>
                     <div>
                         <a href=""><button class="button">Jogar</button></a>
                     </div>
                     <br>
                     <div>
-                        <a href="../Jogo-da-Forca/Sobre_1.0.html"><button class="button">Sobre</button></a>
+                        <a href="../Jogo-da-Forca/sobre-0.0.html"><button class="button">Sobre</button></a>
                     </div>
                 </div>
             </div>
