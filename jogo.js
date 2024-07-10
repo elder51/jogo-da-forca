@@ -1,35 +1,48 @@
 let tentativas = 6
 const palavraSecreta = document.getElementById("tela");
-const palavradica = document.getElementById("categoria");
+const palavraCategoria = document.getElementById("categoria");
+let dinamica = document.getElementsByClassName("letras");
+
 
 const palavras = [
     {
         nome: "Banana",
-        dica: "fruta"
+        categoria: "Fruta"
     },
     {
         nome: "Alface",
-        dica: "verdura"
+        categoria: "Verdura"
     },
     {
         nome: "Jumento",
-        dica: "animal"
+        categoria: "Animal"
     },
 ]
 
 const indice = Math.floor(Math.random() * palavras.length)
 const palavraSort = palavras[indice]
 
-palavradica.innerHTML = palavraSort.dica
-
-for(let i = 0; i < palavraSort.nome.length;i++){
-    palavraSecreta.innerHTML = palavraSecreta.innerHTML +"<div class='letras'>"+""+"</div>"
-}
-console.log(palavraSort.nome)
-
-// BETA
-function verificar() {
-    if(tentativas == 0) {
+// palavra e categoria na tela
+palavraCategoria.innerHTML = palavraSort.categoria
+tela("");
+function tela(letra) {
+    for (let i = 0; i < palavraSort.nome.length;i++){
+        palavraSecreta.innerHTML = palavraSecreta.innerHTML +"<div class='letras'>"+letra+"</div>"
     }
+}
 
+console.log(palavraSort.nome)
+console.log(dinamica[1])
+
+// Button
+function verificar(letra) {
+    if (palavraSort.nome.toUpperCase().includes(letra)) {
+        console.log(letra)
+        for (let i = 0; i < palavraSort.nome.length; i++) {
+            if(letra == palavraSort.nome[i]) {
+                tela(letra);
+                                
+            }        
+        }
+    }
 }
