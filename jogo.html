@@ -33,13 +33,13 @@
             display: inline-flex;
             align-items: center;
             margin-left: 30px;
-        }
-        .letras {
-            width: 65px;
-            border-bottom: 2px solid white;
             font-family: "Sriracha", cursive;
             font-size: 60px;
+        }
+        .letras {
             text-align: center;
+            width: 65px;
+            border-bottom: 2px solid white;
             margin-right: 20px;
         }
 
@@ -74,22 +74,17 @@
                 <img class="displatImg" src="./img/perfil.jpg" alt="">
             </div>
     
-            <div class="palavra-secreta">
-                <div class="letras">T</div>
-                <div class="letras">E</div>
-                <div class="letras">S</div>
-                <div class="letras">T</div>
-                <div class="letras">E</div>
+            <div class="palavra-secreta" id="tela">
             </div>
         </div>
 
         <div class="dica">
-            <p>Dica:</p>
+            <p id="categoria"></p>
         </div>
 
         <div id="teclado">
             <div id="teclas">
-                <button class="tecla">A1,</button>
+                <button class="tecla" onclick="">A1,</button>
                 <button class="tecla">A</button>
                 <button class="tecla">A</button>
                 <button class="tecla">A</button>
