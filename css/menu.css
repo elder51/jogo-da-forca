@@ -3,48 +3,50 @@
 
 
 body{
-    height: 60vh;
+    height: 100vh;
     background-image: url(../img/fundo.jpg);
     background-size: 25%;
+    margin: 0%;
 }
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .titulo{
     font-family: "Sriracha", cursive;
     font-size: 65px;
     color: white;
     text-align: center;
-    margin-top: -100px;
-    margin-bottom: -100px;
+    margin-top: -60px;
+    margin-bottom: -40px;
 }
-.container{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .quadro{
-    height: 83%;
-    width: 70%;
+    height: 345px;  
+    width: 970px; 
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url(../img/quadro.png);
     background-repeat: no-repeat;
     background-size:cover;
 }
-.buttons{
-    height: 100%;
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-button{
+
+.button{
     height: 90px;
     width: 150px;
-    background-color: rgb(0, 25, 0);
+    background-color: transparent;
     border-radius: 15px;
     font-family: "Shadows Into Light", cursive;
     font-size: 50px;
     color: white;
     cursor: pointer;
+    margin: 15px;
 }
 .button:hover{
     transform: scale(1.1);
