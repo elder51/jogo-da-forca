@@ -122,14 +122,3 @@ function trocarImg(tentativas) {
             break;
     }
 };
-
-function restaurar() {
-    
-
-    //contadores
-    tentativas = 0
-    N = 0
-
-    //img
-    trocarImg(tentativas)
-}
