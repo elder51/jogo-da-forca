@@ -1,8 +1,10 @@
-const palavraSecreta = document.getElementById("tela");
+const palavraSecreta = document.getElementsByClassName("palavra-secreta");
 const palavraCategoria = document.getElementById("categoria");
 const dinamica = document.getElementsByClassName("letras");
-
+console.log(palavraSecreta[0])
 let tentativas = 0
+let palavraSort;
+let USB = []
 
 const palavras = [
     {
@@ -17,37 +19,73 @@ const palavras = [
         nome: "Jumento",
         categoria: "Animal"
     },
+    {
+        nome: "Leite-Condensado",
+        categoria: "Comida"
+    }
 ]
 
-const indice = Math.floor(Math.random() * palavras.length)
-const palavraSort = palavras[indice]
+sort()
+function sort(){
+    const indice = Math.floor(Math.random() * palavras.length)
+    palavraSort = palavras[indice]
+    verificarSort(indice)
+}
 
-// palavra e categoria na tela
-montarTela("");
-function montarTela(letra) {
+function verificarSort(indice){
+    if(USB.includes(indice)) {
+        sort()
+    } else {
+        USB.push(indice)
+        palavraSecreta[0].innerHTML = ""
+        palavraSecreta[1].innerHTML = ""
+        montarTela()
+    }
+}
+
+function montarTela() {
+    let el = 0;
     for (let i = 0; i < palavraSort.nome.length;i++){
-        palavraSecreta.innerHTML = palavraSecreta.innerHTML +"<div class='letras'>"+letra+"</div>"
+        palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML +"<div class='letras'>"+""+"</div>"
+        if(palavraSort.nome[i]=="-"){
+            el++
+            dinamica[i].innerHTML = palavraSort.nome[i]
+        }
     }
     palavraCategoria.innerHTML = palavraSort.categoria
 }
 
-console.log(palavraSort.nome)
-
-// teclas/letras
+//teclas/letras
 function verificar(letra) {
+    console.log(letra)
     if (palavraSort.nome.toUpperCase().includes(letra)) {
         for(let i = 0; i < palavraSort.nome.length;i++) {
             if(palavraSort.nome.toUpperCase()[i] == letra) {
                 dinamica[i].innerHTML = palavraSort.nome[i]
             }
+            trocarStyle("tecla-"+letra, letra)
         }
     } else {
         tentativas++
         trocarImg(tentativas)
+        trocarStyle("tecla-"+letra, letra)
     }
 }
 
-//img
+function trocarStyle(id,letra){
+    if (palavraSort.nome.toUpperCase().includes(letra)){
+        document.getElementById(id).style.color = "green"
+        document.getElementById(id).style.cursor = "not-allowed"
+        document.getElementById(id).style.transform = "scale(1.0)"
+        document.getElementById(id).onclick = true
+    } else {
+        document.getElementById(id).style.color = "red"
+        document.getElementById(id).style.cursor = "not-allowed"
+        document.getElementById(id).style.transform = "scale(1.0)"
+        document.getElementById(id).onclick = true
+    }
+}
+
 function trocarImg(tentativas) {
     switch (tentativas) {
         case 1:
