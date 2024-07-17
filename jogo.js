@@ -1,10 +1,12 @@
 const palavraSecreta = document.getElementsByClassName("palavra-secreta");
 const palavraCategoria = document.getElementById("categoria");
 const dinamica = document.getElementsByClassName("letras");
-console.log(palavraSecreta[0])
-let tentativas = 0
+
+
+
+let tentativas = 0;
 let palavraSort;
-let USB = []
+let USB = [];
 
 const palavras = [
     {
@@ -20,17 +22,18 @@ const palavras = [
         categoria: "Animal"
     },
     {
-        nome: "Leite-Condensado",
+        nome: "Leite Condensado",
         categoria: "Comida"
     }
-]
+];
+
 
 sort()
 function sort(){
     const indice = Math.floor(Math.random() * palavras.length)
     palavraSort = palavras[indice]
-    verificarSort(indice)
-}
+    verificarSort(indice) 
+};
 
 function verificarSort(indice){
     if(USB.includes(indice)) {
@@ -40,37 +43,44 @@ function verificarSort(indice){
         palavraSecreta[0].innerHTML = ""
         palavraSecreta[1].innerHTML = ""
         montarTela()
+        //restaurar()
     }
-}
+};
 
 function montarTela() {
     let el = 0;
     for (let i = 0; i < palavraSort.nome.length;i++){
-        palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML +"<div class='letras'>"+""+"</div>"
-        if(palavraSort.nome[i]=="-"){
+        if(palavraSort.nome[i] == ' '){
             el++
-            dinamica[i].innerHTML = palavraSort.nome[i]
+            palavraSort.nome = palavraSort.nome.replace(' ', '')
+            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML +"<div class='letras'>"+" "+"</div>"
+        } else {
+            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML +"<div class='letras'>"+" "+"</div>"
         }
     }
     palavraCategoria.innerHTML = palavraSort.categoria
-}
+};
 
 //teclas/letras
+let N = 0
 function verificar(letra) {
-    console.log(letra)
+    
     if (palavraSort.nome.toUpperCase().includes(letra)) {
         for(let i = 0; i < palavraSort.nome.length;i++) {
             if(palavraSort.nome.toUpperCase()[i] == letra) {
                 dinamica[i].innerHTML = palavraSort.nome[i]
+                N++
+                console.log(N)
             }
-            trocarStyle("tecla-"+letra, letra)
+            trocarStyle("tecla-"+letra, letra)  
         }
     } else {
         tentativas++
         trocarImg(tentativas)
         trocarStyle("tecla-"+letra, letra)
     }
-}
+    // if()
+};
 
 function trocarStyle(id,letra){
     if (palavraSort.nome.toUpperCase().includes(letra)){
@@ -84,7 +94,7 @@ function trocarStyle(id,letra){
         document.getElementById(id).style.transform = "scale(1.0)"
         document.getElementById(id).onclick = true
     }
-}
+};
 
 function trocarImg(tentativas) {
     switch (tentativas) {
@@ -111,4 +121,15 @@ function trocarImg(tentativas) {
             document.getElementById("image").style.backgroundImage = "url(./img/forca-0.png)"
             break;
     }
+};
+
+function restaurar() {
+    
+
+    //contadores
+    tentativas = 0
+    N = 0
+
+    //img
+    trocarImg(tentativas)
 }
