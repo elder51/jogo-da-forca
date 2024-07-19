@@ -26,7 +26,7 @@ body {
 .displayImg {
     height: 292px;
     width: 362px;
-    background-image: url(./img/forca-0.png);
+    background-image: url(../img/forca-0.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -109,7 +109,7 @@ dialog {
     border: transparent;
     height: 785px;
     width: 946px;
-    background-image: url(./img/certificado.png);
+    background-image: url(../img/certificado.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
