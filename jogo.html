@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,147 +8,122 @@
 
     <link rel="stylesheet" href="./css/jogo.css">
 
-    <style>
-        body {
-            height: 90vh;
-            background-color: #006432;
-            color: white;
-            margin: 0px;
-            margin-left: 25px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .display {
-            width: 100%;
-            display: inline-flex;
-        }
-        .displayImg {
-            height: 352px;  
-            width: 314px; 
-            background-image:  url(./img/forca-0.png);
-            background-size:contain;
-            background-repeat: no-repeat;
-            margin-left: 30px;
-        }
-        .palavra-secreta {
-            display: inline-flex;
-            align-items: center;
-            font-family: "Sriracha", cursive;
-            font-size: 60px;
-            margin-left: 30px;
-        }
-        .letras {
-            height: 85px;
-            width: 66px;
-            text-align: center;
-            border-bottom: 2px solid white;
-            margin-right: 20px;
-        }
-
-        .menu {
-            height: 332px;  
-            width: 314px; 
-            text-align: center;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            font-family: "Shadows Into Light", cursive;
-            font-size: 40px;
-            border: 3px solid ;
-            border-radius: 15px;
-            margin-top: -55px;
-        }
-
-        .teclado {
-            width: 70%;
-            justify-content: center;   
-            margin-left: 75px;         
-        }
-
-        .tecla {
-            width: 50px;
-            text-align: center;
-            font-family: "Shadows Into Light", cursive;
-            font-size: 45px;
-            color: white;
-            border: transparent;
-            background-color: transparent;
-            cursor: pointer;
-        }
-        .tecla:hover {
-            transform: scale(1.5);
-        }
-    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="display">
+
+            <!-- Imagen da forca -->
             <div>
-                <div class="displayImg" id="image"></div>
+                <div id="image" class="displayImg"></div>
             </div>
 
-            <div style="align-items: normal;">
+            <!-- Tela/Visor do jogo -->
+            <div id="visor" style="display:table-column;">
                 <div class="palavra-secreta"></div>
 
                 <div class="palavra-secreta"></div>
+            </div>
+
+            <div id="acertou" style="display: none;">
+                <p id="fraseTime" class="font"></p>
+            </div>
+
+            <div id="errou" style="display: none;">
+                <p id="fraseFail" class="font"></p>
             </div>
         </div>
 
         <div class="display">
+
+            <!-- Menu do jogo -->
             <div class="menu">
-                <p id="categoria"></p>
+                <div class="dica">
+                    <p>categoria:&nbsp;
+                    <p id="categoria"></p>
+                    <p>
+                </div>
 
-                <button class="tecla" onclick="sort()">&#128472;</button>
+                <div class="dica">
+                    <p>Score:&nbsp;
+                    <p id="score"></p>
+                    </p>
+                </div>
 
-                <a href="./index.html"><button class="tecla" >&#8962;</button></a>
+                <div class="dica">
+                    <button class="buttonM" onclick="pularPalavra()">&#128472;&nbsp;Mudar</button>
+                </div>
+
+                <div class="dica">
+                    <a href="./index.html"><button class="buttonM">&#8630;&nbsp;Sair</button></a>
+                </div>
+
+                <div id="proximo" class="font" style="display: none;">
+                    <button class="buttonM" onclick="continuar()">&#8631;&nbsp;Continuar</button>
+                </div>
+
+                <div id="pergunta" class="font" style="display: none;">
+                    <button class="buttonM" onclick="prox('sim')">Sim&nbsp;/</button>
+                    <button class="buttonM" onclick="prox('não')">&nbsp;Não</button>
+                </div>
             </div>
 
+            <!-- Teclado/Alfabeto -->
             <div class="teclado">
-                <div id="teclas">
-                    <button id="tecla-A" class="tecla" name="tecla" onclick="verificar('A')">A</button>
-                    <button id="tecla-B" class="tecla" onclick="verificar('B')">B</button>
-                    <button id="tecla-C" class="tecla" onclick="verificar('C')">C</button>
-                    <button id="tecla-D" class="tecla" onclick="verificar('D')">D</button>
-                    <button id="tecla-E" class="tecla" onclick="verificar('E')">E</button>
-                    <button id="tecla-F" class="tecla" onclick="verificar('F')">F</button>
-                    <button id="tecla-G" class="tecla" onclick="verificar('G')">G</button>
-                    <button id="tecla-H" class="tecla" onclick="verificar('H')">H</button>
-                    <button id="tecla-I" class="tecla" onclick="verificar('I')">I</button>
-                </div>
-    
-                <div id="teclas">
-                    <button id="tecla-J" class="tecla" onclick="verificar('J')">J</button>
-                    <button id="tecla-K" class="tecla" onclick="verificar('K')">K</button>
-                    <button id="tecla-L" class="tecla" onclick="verificar('L')">L</button>
-                    <button id="tecla-M" class="tecla" onclick="verificar('M')">M</button>
-                    <button id="tecla-N" class="tecla" onclick="verificar('N')">N</button>
-                    <button id="tecla-O" class="tecla" onclick="verificar('O')">O</button>
-                    <button id="tecla-P" class="tecla" onclick="verificar('P')">P</button>
-                    <button id="tecla-Q" class="tecla" onclick="verificar('Q')">Q</button>
-                    <button id="tecla-R" class="tecla" onclick="verificar('R')">R</button>
-                </div>
-    
-                <div id="teclas">
-                    <button id="tecla-S" class="tecla" onclick="verificar('S')">S</button>
-                    <button id="tecla-T" class="tecla" onclick="verificar('T')">T</button>
-                    <button id="tecla-U" class="tecla" onclick="verificar('U')">U</button>
-                    <button id="tecla-V" class="tecla" onclick="verificar('V')">V</button>
-                    <button id="tecla-W" class="tecla" onclick="verificar('W')">W</button>
-                    <button id="tecla-X" class="tecla" onclick="verificar('X')">X</button>
-                    <button id="tecla-Y" class="tecla" onclick="verificar('Y')">Y</button>
-                    <button id="tecla-Z" class="tecla" onclick="verificar('Z')">Z</button>
+                <div id="teclado">
+                    <div id="teclas">
+                        <button id="tecla-A" class="tecla" name="tecla" onclick="verificar('A')">A</button>
+                        <button id="tecla-B" class="tecla" onclick="verificar('B')">B</button>
+                        <button id="tecla-C" class="tecla" onclick="verificar('C')">C</button>
+                        <button id="tecla-D" class="tecla" onclick="verificar('D')">D</button>
+                        <button id="tecla-E" class="tecla" onclick="verificar('E')">E</button>
+                        <button id="tecla-F" class="tecla" onclick="verificar('F')">F</button>
+                        <button id="tecla-G" class="tecla" onclick="verificar('G')">G</button>
+                        <button id="tecla-H" class="tecla" onclick="verificar('H')">H</button>
+                        <button id="tecla-I" class="tecla" onclick="verificar('I')">I</button>
+                    </div>
+
+                    <div id="teclas">
+                        <button id="tecla-J" class="tecla" onclick="verificar('J')">J</button>
+                        <button id="tecla-K" class="tecla" onclick="verificar('K')">K</button>
+                        <button id="tecla-L" class="tecla" onclick="verificar('L')">L</button>
+                        <button id="tecla-M" class="tecla" onclick="verificar('M')">M</button>
+                        <button id="tecla-N" class="tecla" onclick="verificar('N')">N</button>
+                        <button id="tecla-O" class="tecla" onclick="verificar('O')">O</button>
+                        <button id="tecla-P" class="tecla" onclick="verificar('P')">P</button>
+                        <button id="tecla-Q" class="tecla" onclick="verificar('Q')">Q</button>
+                        <button id="tecla-R" class="tecla" onclick="verificar('R')">R</button>
+                    </div>
+
+                    <div id="teclas">
+                        <button id="tecla-S" class="tecla" onclick="verificar('S')">S</button>
+                        <button id="tecla-T" class="tecla" onclick="verificar('T')">T</button>
+                        <button id="tecla-U" class="tecla" onclick="verificar('U')">U</button>
+                        <button id="tecla-V" class="tecla" onclick="verificar('V')">V</button>
+                        <button id="tecla-W" class="tecla" onclick="verificar('W')">W</button>
+                        <button id="tecla-X" class="tecla" onclick="verificar('X')">X</button>
+                        <button id="tecla-Y" class="tecla" onclick="verificar('Y')">Y</button>
+                        <button id="tecla-Z" class="tecla" onclick="verificar('Z')">Z</button>
+                        <button class="tecla">&nbsp;</button>
+                    </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
+
+    <!-- modal -->
+
+    <div>
+        <dialog id="dialogoWin">
+            <button class="botaoFechar" onclick="prox('não')">&#10060;</button>
+        </dialog>
+    </div>
+
+    <!-- script's -->
 
     <script src="./jogo.js"></script>
 
 </body>
+
 </html>
