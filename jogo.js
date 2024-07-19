@@ -87,11 +87,12 @@ function montarTela() {
 
 // teclas/letras/
 
-let tabela = [];
+let tabelaL = [];
 let L = 0;
+let erros = 0
 
 function verificar(letra) {
-    tabela.push(letra)
+    tabelaL.push(letra)
     if (palavraSort.nome.toUpperCase().includes(letra)) {
         for (let i = 0; i < palavraSort.nome.length; i++) {
             if (palavraSort.nome.toUpperCase()[i] == letra) {
@@ -106,26 +107,28 @@ function verificar(letra) {
         trocarImg(tentativas)
         if (tentativas >= 6) {
             setTimeout(() => {
+                erros++
                 modal(0)
             }, 1000)
         }
     }
 
-    if (palavraSort.nome.length == L) {
+    if (L == palavraSort.nome.length) {
         if (USB.length == palavras.length) {
             setTimeout(() => {
                 modal(2)
             }, 1000)
 
         } else {
-            document.getElementById("fraseTime").innerHTML = "Palavra Correta! Continue Assim!!"
 
+            document.getElementById("fraseTime").innerHTML = "Palavra Correta! Continue Assim!!"
             setTimeout(() => {
                 trocarImg(tentativas)
                 modal(1)
             }, 1000)
         }
     }
+    
 };
 
 function trocarStyle(id, letra) {
@@ -141,6 +144,7 @@ function trocarStyle(id, letra) {
 };
 
 let cont = 0;
+trocarImg(tentativas)
 function trocarImg(tentativas) {
     if (tentativas <= 6) {
         switch (tentativas) {
@@ -184,22 +188,27 @@ function restaurar() {
 
     trocarImg(tentativas)
 
-    for (let i = 0; i < tabela.length; i++) {
-        let id = 'tecla-' + tabela[i]
+    for (let i = 0; i < tabelaL.length; i++) {
+        let id = 'tecla-' + tabelaL[i]
 
         document.getElementById(id).style.color = "white"
         document.getElementById(id).style.cursor = "pointer"
         document.getElementById(id).disabled = false
     }
-    tabela = []
+    tabelaL = []
 };
 
 function modal(V) {
     if (V == 0) {
+        if (USB.length == palavras.length) {
+            if (erros > 0) { modal(2) }
+            return
+        }
         document.getElementById("fraseFail").innerHTML = "Você Falhou!!!"
 
         document.getElementById("errou").style.display = "flex"
         document.getElementById("visor").style.display = "none"
+
         setTimeout(() => {
             document.getElementById("fraseFail").innerHTML = "Deseja Continuar!?"
             document.getElementById("pergunta").style.display = "flex"
@@ -221,11 +230,22 @@ function modal(V) {
         }, 2500)
 
     } else {
+        if (erros > 0) {
+            document.getElementById("fraseTime").innerHTML = "Reprovado!!!"
+            document.getElementById("visor").style.display = "none"
+            document.getElementById("acertou").style.display = "flex"
+            setTimeout(() => {
+                document.getElementById("fraseTime").innerHTML = "Tente de novo na proxima"
+                setTimeout(() => {window.location.replace("./index.html");},3000)
+            },3000)
 
-        dialogWin.showModal()
-        setTimeout(() => {
-            window.location.replace("./index.html");
-        }, 10000)
+        } else {
+            dialogWin.showModal()
+            setTimeout(() => {
+                window.location.replace("./index.html");
+            }, 10000)
+
+        } 
     }
 };
 

@@ -46,9 +46,14 @@
                 </div>
 
                 <div class="dica">
-                    <p>Score:&nbsp;
-                    <p id="score"></p>
-                    </p>
+                    <div id="proximo" class="font" style="display: none;">
+                        <button class="buttonM" onclick="continuar()">&#8631;&nbsp;Continuar</button>
+                    </div>
+    
+                    <div id="pergunta" class="font" style="display: none;">
+                        <button class="buttonM" onclick="prox('sim')">Sim&nbsp;/</button>
+                        <button class="buttonM" onclick="prox('não')">&nbsp;Não</button>
+                    </div>
                 </div>
 
                 <div class="dica">
@@ -59,13 +64,10 @@
                     <a href="./index.html"><button class="buttonM">&#8630;&nbsp;Sair</button></a>
                 </div>
 
-                <div id="proximo" class="font" style="display: none;">
-                    <button class="buttonM" onclick="continuar()">&#8631;&nbsp;Continuar</button>
-                </div>
-
-                <div id="pergunta" class="font" style="display: none;">
-                    <button class="buttonM" onclick="prox('sim')">Sim&nbsp;/</button>
-                    <button class="buttonM" onclick="prox('não')">&nbsp;Não</button>
+                <div class="dica" style="border: transparent;">
+                    <p>Score:&nbsp;
+                    <p id="score"></p>
+                    </p>
                 </div>
             </div>
 
