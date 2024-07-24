@@ -178,467 +178,815 @@ const palavras = [
     {
         palavra: "Figado",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Fricassé",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Gelatina",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Galeto",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Guacamole",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Goiabada",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Guisado",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Hambúrguer",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Iogurte",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jerimum",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jabuticaba",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jenipapo",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Linguiça",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Lasanha",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Lagosta",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Melancia",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Mandioca",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Milho",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Mousse",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Nuggets",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Nachos",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Omelete",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Orégano",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Ostra",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Palmito",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Pimentão",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Peixe",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Queijo",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Quibe",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Quiabo",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Risoto",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Rabanete",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Ravioli",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Salgadinho",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Sushi",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Salsicha",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Salada",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Tapioca",
         categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Torta",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Trufa",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Vatapá",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Vinho",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Vagem",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra : "Xerém",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Yakisoba",
         categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Alicate",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Aparelho",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Almofada",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Bracelete",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Bacia",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Brinco",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Balde",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Carta",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Cadeira",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Computador",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Caneta",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Disco",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Despertador",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Dicionário",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Dentadura",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Escada",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Escova",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Espelho",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Esmalte",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Envelope",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Frasco",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Fivela",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Frigideira",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Garfo",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         origin: "Guarda chuva",
         palavra: "Guarda chuva",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Guitarra",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Grampeador",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Gaiola",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Hidrante",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Haste",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Impressora",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Janela",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jornal",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jaqueta",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Jarra",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Kimono",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Lâmpada",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Lápis",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Livro",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Lixeira",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Máscara",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Martelo",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Mochila",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Mouse",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Monitor",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Notebook",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Navio",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Óculos",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Odontoscópio",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Orelhão",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Ombreira",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Prato",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Panela",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Pincel",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Porta",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Quadro",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Quadriciclo",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Relógio",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Raquete",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Régua",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Roteador",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Sapato",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Serra",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Sapatilha",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Saxofone",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Smartwatch",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Telefone",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Televisão",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Tênis",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Toalha",
-        categoria: "Objeto"
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Tesoura",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Uniforme",
@@ -647,10 +995,16 @@ const palavras = [
     {
         palavra: "Ukulele",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         palavra: "Umidificador",
         categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         nome: "Alface",
@@ -675,13 +1029,6 @@ const palavras = [
         dica3:"nordestina"
     },
     {
-        nome: "Gargantilha",
-        categoria: "acessório" ,
-        dica1:"pescoço",
-        dica2:"sexy",
-        dica3:"colado"
-    },
-    {
         nome: "Barba Ruiva",
         categoria: "folclore",
         dica1:"rio",
@@ -701,20 +1048,6 @@ const palavras = [
         dica1:"tatuador",
         dica2:"medico",
         dica3:"desenvolverdor de sistemas"
-    },
-    {
-        nome: "Empecilho",
-        categoria: "bicho de sete cabeças",
-        dica1:"dificuldade",
-        dica2:"problema",
-        dica3:"dificil"
-    },
-    {
-        nome: "Psicanálise",
-        categoria: "estudo Teórico",
-        dica1:"piscicologico",
-        dica2:"mental",
-        dica3:"comportamental"
     },
     {
         nome: "Cãibra",
@@ -745,32 +1078,33 @@ const palavras = [
         dica3:"inicio"
     },
     {
-        nome: "Narguilé",
-        categoria: "tipo de cachimbo",
-        dica1:"usado com escencia",
-        dica2:"fumaça",
-        dica3:"cano"
-    },
-    {
-        nome: "Cicatriz",
-        categoria: "marca permanente",
-    },
-    {
         nome: "Microfone",
-        categoria: "é usado em stand-ups, para ampliação",
+        categoria: "Objeto",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         origin: "Zigue-Zague",
         nome: "Zigue-Zague",
         categoria: "linha ou série de linhas quebradas fazem...",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         nome: "Magnético",
         categoria: "que puxa, agarra, fascina e atrai",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
     {
         origin: "Helena Ignez",
         nome: "Helena Ignez",
         categoria: "Atriz Brasileira",
+        dica1:"",
+        dica2:"",
+        dica3:""
     },
 ]

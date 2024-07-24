@@ -40,7 +40,7 @@ const fraseReprovado = [
 
 const palavras = [
     {
-        nome: "Banana",
+        nome: "Bana-na",
         categoria: "Fruta"
     },
     {
@@ -122,6 +122,8 @@ function montarTela() {
             el++
             palavraSort.nome = palavraSort.nome.replace(' ', '')
             palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras'>" + " " + "</div>"
+        } else if(palavraSort.nome[i] == '-') {
+            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras' style='border: transparent;'>" + "-" + "</div>"
         } else {
             palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras'>" + " " + "</div>"
         }
@@ -134,6 +136,7 @@ function montarTela() {
 let tabelaL = [];
 let L = 0;
 let erros = 0;
+let h = 0
 
 function verificar(letra) {
 
@@ -157,7 +160,11 @@ function verificar(letra) {
         }
     }
 
-    if (L == palavraSort.nome.length) {
+    if (palavraSort.nome.toUpperCase().includes("-")) {
+        h = 1
+    }
+
+    if (L == palavraSort.nome.length-h) {
         if (USB.length == palavras.length && erros == 0) {
             modal('certificado')
 
@@ -226,6 +233,7 @@ function trocarImg(tentativas) {
 function restaurar() {
     tentativas = 0
     L = 0
+    h = 0
 
     trocarImg(tentativas)
 
