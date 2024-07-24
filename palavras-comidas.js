@@ -700,65 +700,125 @@ const palavras1 = [
         categoria: "Objeto",
     },
     {
+        nome: "Banana",
+        categoria: "fruta",
+        dica1:"amarela",
+        dica2:"azul",
+        dica3:"pode por açucar"
+    },
+    {
         nome: "Alface",
         categoria: "verdura",
+        dica1: "verde",
+        dica2:"salada",
+        dica3:"forte"
+
     },
     {
         nome: "Jumento",
         categoria: "animal",
+        dica1:"orelhudo",
+        dica2:"cinza",
+        dica3:"shrek"
+
+
     },
     {
         nome: "Inhame",
         categoria: "comida",
+        dica1:"raiz",
+        dica2:"branco",
+        dica3:"nordestina"
+
     },
     {
         nome: "Gargantilha",
-        categoria: "acessório",
+        categoria: "acessório" ,
+        dica1:"pescoço",
+        dica2:"sexy",
+        dica3:"colado"
+
     },
     {
         nome: "Barba Ruiva",
-        categoria: "folclore"
+        categoria: "folclore",
+        dica1:"rio",
+        dica2:"laranja",
+        dica3:"homem"
+
     },
     {
         nome: "Tacape",
         categoria: "arma",
+        dica1:"idade da pedra",
+        dica2:"pedra e madeira",
+        dica3:"corda pedra de marmore"
+
     },
     {
         nome: "Profissão",
         categoria: "economista",
+        dica1:"tatuador",
+        dica2:"medico",
+        dica3:"desenvolverdor de sistemas"
+
     },
     {
         nome: "Empecilho",
         categoria: "bicho de sete cabeças",
+        dica1:"dificuldade",
+        dica2:"problema",
+        dica3:"dificil"
+
     },
     {
         nome: "Psicanálise",
         categoria: "estudo Teórico",
+        dica1:"piscicologico",
+        dica2:"mental",
+        dica3:"comportamental"
+
     },
     {
         nome: "Cãibra",
         categoria: "dor",
+        dica1:"muscular",
+        dica2:"torsão",
+        dica3:"choque"
+
     },
     {
         nome: "Lazulita",
-        categoria: "mineral",
-    },
-    {
-        nome: "Jazz",
-        categoria: "estilo musical",
+        categoria: "Mineral",
+        dica1:"azul",
+        dica2:"tem no minecraft",
+        dica3:"faz encatamento"
+
     },
     {
         nome: "Echarpe",
         categoria: "objeto",
+        dica1:"rosangela usa",
+        dica2:"pano",
+        dica3:"acessorio"
+
     },
     {
         nome: "Vestíbulo",
         categoria: "pátio de acesso à entrada de uma construção",
+        dica1:"entrada",
+        dica2:"começo",
+        dica3:"inicio"
+
     },
     {
         nome: "Narguilé",
         categoria: "tipo de cachimbo",
-    },
+        dica1:"usado com escencia",
+        dica2:"fumaça",
+        dica3:"cano"
+
+    }
     {
         nome: "Cicatriz",
         categoria: "marca permanente",
