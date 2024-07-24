@@ -18,16 +18,16 @@ body{
 
 .titulo{
     font-family: "Sriracha", cursive;
-    font-size: 65px;
+    font-size: 75px;
     color: white;
     text-align: center;
-    margin-top: -60px;
-    margin-bottom: -40px;
+    margin-top: -90px;
+    margin-bottom: -50px;
 }
 
 .quadro{
-    height: 345px;  
-    width: 970px; 
+    height: 365px;  
+    width: 1020px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,19 +35,53 @@ body{
     background-image: url(../img/quadro.png);
     background-repeat: no-repeat;
     background-size:cover;
+    margin-top: -50px;
 }
 
 .button{
-    height: 90px;
+    height: 80px;
     width: 150px;
     background-color: transparent;
     border-radius: 15px;
     font-family: "Shadows Into Light", cursive;
-    font-size: 50px;
+    font-size: 45px;
     color: white;
     cursor: pointer;
-    margin: 15px;
+    margin: 10px;
 }
 .button:hover{
     transform: scale(1.1);
+}
+
+.font {
+    height: 20;
+    color: white;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 2px solid;
+    border-radius: 5px;
+    display: inline-flex;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 30px;
+    margin: 0px;
+    margin-top: -5px;
+    padding: 0px;
+}
+.font:hover {
+    transform: scale(1.2);
+    color: gray;
+}
+
+.left {
+    margin-left: -385px;
+    margin-right: 385px;
+}
+
+.right {
+    margin-left: 475px;
+    margin-right: -475px;
+}
+.center {
+    justify-content: center;
+    align-items: center;
 }

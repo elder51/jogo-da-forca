@@ -26,56 +26,71 @@
                 <div class="palavra-secreta"></div>
             </div>
 
-            <div id="acertou" style="display: none;">
-                <p id="fraseTime" class="font"></p>
+            <div id="visorDialogo" style="display: none;">
+                <p id="frase" class="font"></p>
             </div>
 
-            <div id="errou" style="display: none;">
-                <p id="fraseFail" class="font"></p>
-            </div>
         </div>
 
         <div class="display">
 
             <!-- Menu do jogo -->
             <div class="menu">
-                <div class="dica">
-                    <p>categoria:&nbsp;
-                    <p id="categoria"></p>
-                    <p>
-                </div>
 
-                <div class="dica">
-                    <div id="proximo" class="font" style="display: none;">
-                        <button class="buttonM" onclick="continuar()">&#8631;&nbsp;Continuar</button>
+                <div id="menu-1">
+                    <div class="apcao">
+                        <p>categoria:&nbsp;<p>
+                        <p id="categoria"></p>
                     </div>
-    
-                    <div id="pergunta" class="font" style="display: none;">
-                        <button class="buttonM" onclick="prox('sim')">Sim&nbsp;/</button>
-                        <button class="buttonM" onclick="prox('não')">&nbsp;Não</button>
+                
+                    <div class="apcao">
+                        <p>&nbsp;Score:&nbsp;
+                        <p id="score"></p>
+                        </p>
+                    </div>
+                
+                    <div class="apcao">
+                        <button id="Pedirdica" class="buttonM" onclick="dicas('dica')">&nbsp;Pedir dica&nbsp;</button>
+                    </div>
+                
+                    <div class="apcao">
+                        <button class="buttonM" onclick="reiniciar()">&#128472;&nbsp;Reiniciar&nbsp;</button>
+                    </div>
+                
+                    <div class="apcao" style="border: transparent;">
+                        <a href="./index.html"><button class="buttonM">&#8630;&nbsp;Sair&nbsp;</button></a>
                     </div>
                 </div>
 
-                <div class="dica">
-                    <button class="buttonM" onclick="pularPalavra()">&#128472;&nbsp;Mudar</button>
-                </div>
+                <div id="menu-2" style="display: none;">
+                    <div class="apcao">
+                        <p>Opções<p>
+                    </div>
 
-                <div class="dica">
-                    <a href="./index.html"><button class="buttonM">&#8630;&nbsp;Sair</button></a>
-                </div>
+                    <div class="apcao">
+                        <button id="dica-1" class="buttonM" onclick="dicas('letra');playA(1)">letra</button>
+                    </div>
 
-                <div class="dica" style="border: transparent;">
-                    <p>Score:&nbsp;
-                    <p id="score"></p>
-                    </p>
+                    <div class="apcao">
+                        <button id="dica-2" class="buttonM" onclick="dicas('')">...</button>
+                    </div>
+
+                    <div class="apcao">
+                        <button id="dica-3" class="buttonM" onclick="dicas('')">...</button>
+                    </div>
+
+                    <div class="apcao" style="border: transparent;">
+                        <button class="buttonM" onclick="dicas('voltar')">&#8630;&nbsp;Voltar&nbsp;</button>
+                    </div>
                 </div>
+               
             </div>
 
             <!-- Teclado/Alfabeto -->
             <div class="teclado">
                 <div id="teclado">
                     <div id="teclas">
-                        <button id="tecla-A" class="tecla" name="tecla" onclick="verificar('A')">A</button>
+                        <button id="tecla-A" class="tecla" onclick="verificar('A')">A</button>
                         <button id="tecla-B" class="tecla" onclick="verificar('B')">B</button>
                         <button id="tecla-C" class="tecla" onclick="verificar('C')">C</button>
                         <button id="tecla-D" class="tecla" onclick="verificar('D')">D</button>
@@ -111,17 +126,29 @@
                     </div>
                 </div>
             </div>
+
+            <!-- contador de chances -->
+             <div class="dica" style="border: transparent;">
+                <p>&#128161;=</p>
+                <p id="dica"></p> 
+                <p>(<p id="chances"></p>)</p>     
+             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- modal -->
 
     <div>
-        <dialog id="dialogoWin">
-            <button class="botaoFechar" onclick="prox('não')">&#10060;</button>
+        <dialog id="dialogo">
         </dialog>
     </div>
 
+    <!-- audios -->
+
+    <audio autoplay loop>
+        <source src="./mp3/musica-de-fundo.mp3" type="audio/mp3"/>
+    </audio>
+    
     <!-- script's -->
 
     <script src="./jogo.js"></script>

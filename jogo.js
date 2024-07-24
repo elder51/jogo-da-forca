@@ -2,13 +2,39 @@ const palavraSecreta = document.getElementsByClassName("palavra-secreta");
 const palavraCategoria = document.getElementById("categoria");
 const dinamica = document.getElementsByClassName("letras");
 const tecla = document.getElementsByClassName("tecla");
-const dialogWin = document.getElementById("dialogoWin")
+const dialog = document.getElementById("dialogo");
 
 let palavraSort;
 let tentativas = 0;
-let score = 0
 let USB = [];
+let score = 0;
+let dica = 5;
+let chances = 3;
+let delay = 0;
 
+function playA(V) {
+    document.getElementsByTagName('audio')[V].play()
+}
+function stopA(V) {
+    document.getElementsByTagName('audio')[V].pause()
+}
+
+document.getElementById("score").innerHTML = score;
+document.getElementById("dica").innerHTML = dica;
+document.getElementById("chances").innerHTML = chances;
+
+
+const frasePalavraCorreta = [
+    ["Palavra correta! Continue assim!!","Procurando nova palavra no dicionario...","Palavra encontrada!!"]
+];
+
+const frasePalavraErrada = [
+    ["Palavra incorreta!","Aguarde enquanto procuramos uma nova palavra...","Motando nova palavra!!"]
+];
+
+const fraseReprovado = [
+    ["Reprovado!!!","Tente novamente mais tarde!"]
+];
 
 const palavras = [
     {
@@ -24,6 +50,7 @@ const palavras = [
         categoria: "Animal"
     },
     {
+        origin: "Leite Condensado",
         nome: "Leite Condensado",
         categoria: "Comida"
     }
@@ -31,44 +58,59 @@ const palavras = [
 
 // Interface button
 
-function pularPalavra() {
+function reiniciar() {
     setTimeout(() => {
-        USB.pop()
-        sort()
+        score = 0
+        dica = 5
+        chances = 3
+        erros = 0
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("dica").innerHTML = dica;
+        document.getElementById("chances").innerHTML = chances;
+        USB = []
         restaurar()
-    }, 2000)
+        verificarSort()
+    }, 1000)
 };
+
 
 function continuar() {
     setTimeout(() => {
-        document.getElementById("acertou").style.display = "none"
-        document.getElementById("errou").style.display = "none"
-        document.getElementById("proximo").style.display = "none"
-        document.getElementById("visor").style.display = "table-column"
-        sort()
+        if(dica <= 3) {
+            chances = dica  
+        } else {
+            chances = 3
+        }
+        document.getElementById("dica").innerHTML = dica
+        document.getElementById("chances").innerHTML = chances
         restaurar()
+        verificarSort()
     }, 1000)
 };
 
 // Interface jogo
 
-sort()
-function sort() {
-    const indice = Math.floor(Math.random() * palavras.length)
-    palavraSort = palavras[indice]
-    verificarSort(indice)
+
+function sort(V) {
+    const indice = Math.floor(Math.random() * V.length)
+    
+    return indice
 };
 
-function verificarSort(indice) {
+verificarSort()
+function verificarSort() {
+    const indice = sort(palavras)
+    
     if (USB.includes(indice)) {
-        sort()
+        verificarSort()
     } else {
         USB.push(indice)
+        palavraSort = palavras[indice]
+
         palavraSecreta[0].innerHTML = ""
         palavraSecreta[1].innerHTML = ""
         montarTela()
     }
-    document.getElementById("score").innerHTML = score
 };
 
 function montarTela() {
@@ -89,9 +131,10 @@ function montarTela() {
 
 let tabelaL = [];
 let L = 0;
-let erros = 0
+let erros = 0;
 
 function verificar(letra) {
+
     tabelaL.push(letra)
     if (palavraSort.nome.toUpperCase().includes(letra)) {
         for (let i = 0; i < palavraSort.nome.length; i++) {
@@ -105,81 +148,77 @@ function verificar(letra) {
         tentativas++
         trocarStyle("tecla-" + letra, letra)
         trocarImg(tentativas)
+
         if (tentativas >= 6) {
-            setTimeout(() => {
-                erros++
-                modal(0)
-            }, 1000)
+            erros++
+            modal('errou')
         }
     }
 
     if (L == palavraSort.nome.length) {
-        if (USB.length == palavras.length) {
-            setTimeout(() => {
-                modal(2)
-            }, 1000)
+        if (USB.length == palavras.length && erros == 0) {
+            modal('certificado')
+
+        } else if (USB.length == palavras.length && erros > 0) {
+            modal('falhou')
 
         } else {
-
-            document.getElementById("fraseTime").innerHTML = "Palavra Correta! Continue Assim!!"
-            setTimeout(() => {
-                trocarImg(tentativas)
-                modal(1)
-            }, 1000)
+            trocarImg(tentativas)
+            modal('acertou')
         }
     }
-    
+
 };
 
 function trocarStyle(id, letra) {
+    document.getElementById(id).style.cursor = "not-allowed"
+    document.getElementById(id).disabled = true
+
     if (palavraSort.nome.toUpperCase().includes(letra)) {
         document.getElementById(id).style.color = "greenYellow"
-        document.getElementById(id).style.cursor = "not-allowed"
-        document.getElementById(id).disabled = true
+        
     } else {
         document.getElementById(id).style.color = "red"
-        document.getElementById(id).style.cursor = "not-allowed"
-        document.getElementById(id).disabled = true
     }
 };
 
-let cont = 0;
-trocarImg(tentativas)
+let lErradas = 60;
 function trocarImg(tentativas) {
     if (tentativas <= 6) {
         switch (tentativas) {
             case 1:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-1.png)";
-                cont = 15
+                lErradas = 50
                 break;
             case 2:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-2.png)";
-                cont = 12
+                lErradas = 40
                 break;
             case 3:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-3.png)";
-                cont = 9
+                lErradas = 30
                 break;
             case 4:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-4.png)";
-                cont = 6
+                lErradas = 20
                 break;
             case 5:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-5.png)";
-                cont = 3
+                lErradas = 10
                 break;
             case 6:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-6.png)";
-                cont = 0
+                lErradas = 0
                 break;
 
             default:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-0.png)";
-                cont = 18
+                lErradas = 60
                 break;
         }
+    } else {
+        return
     }
-
 };
 
 function restaurar() {
@@ -188,6 +227,15 @@ function restaurar() {
 
     trocarImg(tentativas)
 
+    document.getElementById("visorDialogo").style.display = "none"
+    document.getElementById("visor").style.display = "table-column"
+
+    if(dica > 0) {
+        document.getElementById('Pedirdica').disabled = false
+        document.getElementById('Pedirdica').style.color = "white"
+        document.getElementById('Pedirdica').style.cursor = "pointer"
+    }
+
     for (let i = 0; i < tabelaL.length; i++) {
         let id = 'tecla-' + tabelaL[i]
 
@@ -195,77 +243,135 @@ function restaurar() {
         document.getElementById(id).style.cursor = "pointer"
         document.getElementById(id).disabled = false
     }
+
     tabelaL = []
-};
 
-function modal(V) {
-    if (V == 0) {
-        if (USB.length == palavras.length) {
-            if (erros > 0) { modal(2) }
-            return
-        }
-        document.getElementById("fraseFail").innerHTML = "Você Falhou!!!"
-
-        document.getElementById("errou").style.display = "flex"
-        document.getElementById("visor").style.display = "none"
-
-        setTimeout(() => {
-            document.getElementById("fraseFail").innerHTML = "Deseja Continuar!?"
-            document.getElementById("pergunta").style.display = "flex"
-        }, 2000)
-
-    } else if (V == 1) {
-        score = score + cont
-
-        document.getElementById("visor").style.display = "none"
-        document.getElementById("acertou").style.display = "flex"
-
-        setTimeout(() => {
-            document.getElementById("fraseTime").innerHTML = "Procurando nova Palavra no Dicionario..."
-            setTimeout(() => {
-                document.getElementById("fraseTime").innerHTML = "Palavra Encontrada!!"
-                document.getElementById("score").innerHTML = score
-                document.getElementById("proximo").style.display = "flex"
-            }, 5000)
-        }, 2500)
-
-    } else {
-        if (erros > 0) {
-            document.getElementById("fraseTime").innerHTML = "Reprovado!!!"
-            document.getElementById("visor").style.display = "none"
-            document.getElementById("acertou").style.display = "flex"
-            setTimeout(() => {
-                document.getElementById("fraseTime").innerHTML = "Tente de novo na proxima"
-                setTimeout(() => {window.location.replace("./index.html");},3000)
-            },3000)
-
-        } else {
-            dialogWin.showModal()
-            setTimeout(() => {
-                window.location.replace("./index.html");
-            }, 10000)
-
-        } 
+    if(palavraSort.origin) {
+        palavraSort.nome = palavraSort.origin
+        return
     }
 };
 
-function prox(escolha) {
-    setTimeout(() => {
-        document.getElementById("pergunta").style.display = "none"
-        if (escolha == "sim") {
-            document.getElementById("fraseFail").innerHTML = "Procurando nova Palavra no Dicionario..."
-            setTimeout(() => {
-                document.getElementById("fraseFail").innerHTML = "Motando palavra!!"
-                setTimeout(() => {
-                    continuar()
-                }, 2000)
-            }, 5000)
+let cUsadas = 40;
+function modal(V) {
 
-        } else {
-            setTimeout(() => {
-                window.location.replace("./index.html")
-            }, 1000)
+    if (V == 'certificado') {
+        dialog.showModal()
+        setTimeout(() => {
+            window.location.replace("./index.html");
+        }, 10000)
 
-        }
-    }, 1000)
+    } else if (V == 'acertou') {
+        score = score + lErradas + cUsadas
+        dica++
+
+        colocarFrase(frasePalavraCorreta)
+
+    } else if (V == 'errou') {
+        score = (score-(score/10))
+
+        colocarFrase(frasePalavraErrada)
+
+    } else {
+        colocarFrase(fraseReprovado)
+
+    }
 };
+
+function dicas(V) {
+    if(V == "dica") {
+        document.getElementById("menu-1").style.display = "none"
+        document.getElementById("menu-2").style.display = "contents"
+        setTimeout(() => {
+            document.getElementById("menu-2").style.display = "none"
+            document.getElementById("menu-1").style.display = "contents"
+        },5000)
+    }
+
+    if (V == "voltar") {
+        document.getElementById("menu-2").style.display = "none"
+        document.getElementById("menu-1").style.display = "contents"
+    }
+    
+    
+    if(V == "letra") {
+        const indice = sort(palavraSort.nome)
+        if(tabelaL.includes(palavraSort.nome[indice].toUpperCase())) {
+            dicas('letra')
+        } else {
+            dica--
+            chances--
+            verificar(palavraSort.nome[indice].toUpperCase())
+        }
+    }
+
+    if(chances == 0) {
+        document.getElementById('Pedirdica').disabled = true
+        document.getElementById('Pedirdica').style.color = "gray"
+        document.getElementById('Pedirdica').style.cursor = "not-allowed"
+
+        setTimeout(() => {
+            document.getElementById("menu-2").style.display = "none"
+            document.getElementById("menu-1").style.display = "contents"
+        },500)
+    }
+
+    document.getElementById("dica").innerHTML = dica
+    document.getElementById("chances").innerHTML = chances
+
+    switch (chances) {
+        case 0:
+            cUsadas = 0
+            break;
+        case 1:
+            cUsadas = 20
+            break;
+        case 2:
+            cUsadas = 35
+            break;
+    
+        default:
+            cUsadas = 40
+            break;
+    }
+
+};
+
+function colocarFrase(arrayDeFrases) {
+    delay = 0
+
+    document.getElementById("visor").style.display = "none"
+    document.getElementById("visorDialogo").style.display = "flex"
+
+    const indice = sort(arrayDeFrases)
+    const frase = arrayDeFrases[indice]
+
+    document.getElementById('frase').innerHTML = frase[delay]
+    document.getElementById("score").innerHTML = score
+
+    proximaFrase(frase)
+    function proximaFrase(frase){
+        
+        setTimeout(()=>{
+            if(delay >= frase.length-1){
+                setTimeout(()=>{
+                    if(frase.length == 2) {
+                        window.location.replace("./index.html")
+    
+                    } else {
+                        document.getElementById("menu-2").style.display = "none"
+                        document.getElementById("menu-1").style.display = "contents"
+                        continuar()
+    
+                    }
+                },1500)
+                
+            } else {
+                delay++
+                document.getElementById('frase').innerHTML = frase[delay]
+                proximaFrase(frase)
+    
+            } 
+        },2000)
+    }
+}

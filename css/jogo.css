@@ -3,15 +3,18 @@
 
 
 body {
-    height: 90vh;
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #006432;
     color: white;
-    margin: 0px;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin: 2px;
 }
 
 .container {
+    height: 90%;
+    width: 94%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,39 +22,43 @@ body {
 }
 
 .display {
+    height: 100%;
     width: 100%;
     display: inline-flex;
 }
 
 .displayImg {
     height: 292px;
-    width: 362px;
+    width: 340px;
     background-image: url(../img/forca-0.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 20px;
+    margin-left: 25px;
+    margin-top: 15px;
 }
 
 .palavra-secreta {
-    height: 50%;
+    height: 48%;
+    width: 99%;
     display: inline-flex;
     align-items: center;
-    font-family: "Sriracha", cursive;
-    font-size: 60px;
     margin-left: 50px;
+    
 }
 .letras {
-    height: 85px;
-    width: 66px;
+    height: 65px;
+    width: 56px;
+    font-family: "Sriracha", cursive;
+    font-size: 50px;
     text-align: center;
     border-bottom: 2px solid white;
     margin-right: 20px;
 }
 
 .menu {
-    height: 332px;
-    width: 354px;
+    height: 100%;
+    width: 28%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,7 +67,7 @@ body {
     border: 3px solid;
     border-radius: 15px;
 }
-.dica {
+.apcao {
     height: 65px;
     width: 100%;
     display: inline-flex;
@@ -74,8 +81,10 @@ body {
     align-items: center;
     justify-content: center;
     font-family: "Shadows Into Light", cursive;
-    font-size: 40px;
+    font-size: 50px;
+    margin-left: 40px;
 }
+
 .buttonM {
     align-items: center;
     font-family: "Shadows Into Light", cursive;
@@ -85,11 +94,17 @@ body {
     background-color: transparent;
     cursor: pointer;
 }
+.buttonM:hover {
+    transform: scale(1.2);
+}
 
 .teclado {
-    width: 70%;
-    margin-top: 55px;
-    margin-left: 75px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 .tecla {
     width: 50px;
@@ -105,20 +120,24 @@ body {
     transform: scale(1.5);
 }
 
-dialog {
+#dialogo {
     border: transparent;
-    height: 785px;
-    width: 946px;
+    height: 90%;
+    width: 68%;
     background-image: url(../img/certificado.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-.botaoFechar {
-    height: 90px;
-    width: 90px;
-    font-size: 50px;
-    color: red;
-    background-color: transparent;
-    border: none;
+
+.dica{
+    height: 50px;
+    width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: right;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 40px;
+    margin-top: -280px;
+    margin-left: 150px;
 }
