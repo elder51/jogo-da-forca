@@ -48,10 +48,6 @@ const palavras = [
         categoria: "mineral"
     },
     {
-        nome: "Jazz",
-        categoria: "estilo musical"
-    },
-    {
         nome: "Echarpe",
         categoria: "objeto"
     },
@@ -82,14 +78,6 @@ const palavras = [
     {
         nome: "Balaústre",
         categoria: "sustenta um peitoril ou corrimão"
-    },
-    {
-        nome: "Oboé",
-        categoria: "instrumento musical"
-    },
-    {
-        nome: "Go",
-        categoria: "jogo estrátegico para tabuleiro"
     },
     {
         nome: "Taiko",
