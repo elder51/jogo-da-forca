@@ -1,4 +1,4 @@
-const palavras1 = [
+const palavras = [
     {
         palavra: "Amendoim",
         categoria: "Comida",
