@@ -14,25 +14,74 @@
             <h1>JOGO DA FORCA</h1>
         </div>
 
-        <div class="quadro"> 
-                <div>
-                    <div class="left">
-                        <button class="font">login</button>
-                    </div>
-
-                    <div class="center">
-                        <a href="./jogo.html"><button class="button">Jogar</button></a>
-                    </div>
-                    
-                    <div class="center">
-                        <a href="./sobre.html"><button class="button">Sobre</button></a>
-                    </div>
-
-                    <div class="right">
-                        <button class="font">Ranking</button>
-                    </div>
+        <div class="quadro">
+            <div>
+                <div class="left">
+                    <button class="font" onclick="abrirLogin()">login</button>
                 </div>
+        
+                <div class="center">
+                    <a href="./jogo.html"><button class="button">Jogar</button></a>
+                </div>
+        
+                <div class="center">
+                    <a href="./sobre.html"><button class="button">Sobre</button></a>
+                </div>
+        
+                <div class="right">
+                    <button class="font">Ranking</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <dialog id="login">
+        <form action="">
+            <div id="entrar" >
+                <div>
+                    <p onclick="fecharLogin()">&#10060;</p>
+                </div>
+
+                <div>
+                    <span>User</span>
+                    <input type="text" name="" id="user">
+                </div>
+            
+                <div>
+                    <span>Senha</span>
+                    <input type="password" name="" id="Senha">
+                </div>
+            
+                <div>
+                    <p>esqueci a senha</p>
+                    
+                    <p>criar conta</p>
+                </div>
+
+                <div>
+                    <button><p>login</p></button>
+                </div>
+            </div>
+
+            <div id="criar-conta" >
+                <div></div>
+            
+                <div></div>
+            
+                <div></div>
+            </div>
+            
+        </form>
+    </dialog>
+
+    <script>
+        function abrirLogin() {
+            document.getElementById('login').showModal()
+        }
+        function fecharLogin() {
+            document.getElementById('login').close()
+        }
+    </script>
+
 </body>
 </html>
