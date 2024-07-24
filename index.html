@@ -6,6 +6,7 @@
     <title>Jogo Da forca</title>
 
     <link rel="stylesheet" href="./css/menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     
 </head>
 <body>
@@ -36,45 +37,114 @@
     </div>
 
     <dialog id="login">
-        <form action="">
-            <div id="entrar" >
-                <div>
-                    <p onclick="fecharLogin()">&#10060;</p>
-                </div>
+        <form onsubmit="handlesubmit(event)" id="fazerLogin" style="display: none;">
+            <div>
+                <p onclick="fecharLogin()">&#10060;</p>
+            </div>
+        
+            <div>
+                <span>User</span>
+                <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
+            </div>
+        
+            <div>
+                <span>Senha</span>
+                <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+            </div>
+        
+            <div>
+                <p>esqueci a senha</p>
+        
+                <p onclick="criarConta">criar conta</p>
+            </div>
+        
+            <div>
+                <input type="submit" value="login">
+            </div>
+        </form>
 
-                <div>
-                    <span>User</span>
-                    <input type="text" name="" id="user">
-                </div>
-            
-                <div>
-                    <span>Senha</span>
-                    <input type="password" name="" id="Senha">
-                </div>
-            
-                <div>
-                    <p>esqueci a senha</p>
-                    
-                    <p>criar conta</p>
-                </div>
-
-                <div>
-                    <button><p>login</p></button>
-                </div>
+        <form onsubmit="criarlogin(event)" id="criarConta"> 
+            <div>
+                <span>User</span>
+                <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
+            </div>
+        
+            <div>
+                <span>Senha</span>
+                <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
             </div>
 
-            <div id="criar-conta" >
-                <div></div>
-            
-                <div></div>
-            
-                <div></div>
+            <div>
+                <input type="submit" value="Criar">
             </div>
-            
         </form>
     </dialog>
 
     <script>
+        
+        function handlesubmit(event) {
+            event.preventDefault()
+
+            const form = new formData(event.target)
+
+            const email = form.get('email')
+            const password = CryptoJS.SHA256(form.get('password')).toString
+
+            const users =   JSON.parse(localStorage.getItem('users'))
+
+            let emailExists = false
+
+            for(const user of users) {
+                if(user.email == email) {
+                    emailExists = true
+                    return
+                }
+            }
+
+            if(!emailExists) {
+                document.getElementById('').innerHTML = 'Usuário não cadastrado'
+            }
+
+            if(f) {}
+
+            console.log('oi')
+        }
+
+        function criarlogin(event) {
+            event.preventDefault()
+            
+            const form = new FormData(event.target)
+            
+            const user = form.get('user')
+            const password = CryptoJS.SHA256(form.get('password')).toString()
+            console.log('oi')
+
+            const userObj = {
+                user,
+                password
+            }
+            
+            let users = JSON.parse(localStorage.getItem('users'))
+
+            if(!users) {
+                localStorage.setItem('users',JSON.stringify([]))
+                users = []
+            }
+
+            users.push(userObj)
+
+            localStorage.setItem('users',JSON.stringify(users))
+
+            fecharLogin()
+        }
+
+
+
+        function criarConta() {
+            document.getElementById('fazerLogin').style.display = none 
+            document.getElementById('criarConta').style.display = flex
+        }
+
         function abrirLogin() {
             document.getElementById('login').showModal()
         }
