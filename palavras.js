@@ -45,11 +45,7 @@ const palavras = [
     },
     {
         nome: "Lazulita",
-        categoria: "Mineral"
-    },
-    {
-        nome: "Jazz",
-        categoria: "estilo musical",
+        categoria: "mineral"
     },
     {
         nome: "Echarpe",
@@ -62,5 +58,45 @@ const palavras = [
     {
         nome: "Narguilé",
         categoria: "tipo de cachimbo"
-    }
+    },
+    {
+        nome: "Cicatriz",
+        categoria: "marca permanente"
+    },
+    {
+        nome: "Microfone",
+        categoria: "é usado em stand-ups, para ampliação"
+    },
+    {
+        nome: "Zigue-Zague",
+        categoria: "linha ou série de linhas quebradas fazem..."
+    },
+    {
+        nome: "Magnético",
+        categoria: "que puxa, agarra, fascina e atrai"
+    },
+    {
+        nome: "Balaústre",
+        categoria: "sustenta um peitoril ou corrimão"
+    },
+    {
+        nome: "Taiko",
+        categoria: "tambor de origem japonesa"
+    },
+    {
+        nome: "Helena Ignez",
+        categoria: "atriz brasileira"
+    },
+    {
+        nome: "Júlio Bressane",
+        categoria: "diretor de cinema brasileiro"
+    },
+    {
+        nome: "Rogério Sganzerla",
+        categoria: "diretor de cinema brasileiro"
+    },
+    {
+        nome: "Epítome",
+        categoria: "resume noções básicas de um assunto, de uma arte etc"
+    },
 ]

@@ -25,11 +25,13 @@ document.getElementById("chances").innerHTML = chances;
 
 
 const frasePalavraCorreta = [
-    ["Palavra correta! Continue assim!!","Procurando nova palavra no dicionario...","Palavra encontrada!!"]
+    ["Palavra correta! Continue assim!!","Procurando nova palavra no dicionario...","Palavra encontrada!!"],
+    ["Você acertou! Parabéns!","Aguarde um momento...","Você conseguiu!!"]
 ];
 
 const frasePalavraErrada = [
-    ["Palavra incorreta!","Aguarde enquanto procuramos uma nova palavra...","Motando nova palavra!!"]
+    ["Palavra incorreta!","Aguarde enquanto procuramos uma nova palavra...","Montando nova palavra!!"],
+    ["Errado! Tente novamente!","Buscando nova palavra...","Não desista! Nova palavra chegando..."]
 ];
 
 const fraseReprovado = [

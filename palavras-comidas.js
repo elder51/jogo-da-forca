@@ -1,115 +1,199 @@
 const palavras1 = [
     {
-        palavra : "Amendoim",
-        categoria : "Comida"
+        palavra: "Amendoim",
+        categoria: "Comida",
+        dica1: "Possui Casca",
+        dica2: "Fornece outras comidas",
+        dica3: "Paçoca"
     },
     {
         palavra: "Arroz",
         categoria: "Comida",
+        dica1: "Branco",
+        dica2: "Grão",
+        dica3: "Alomoço"
     },
     {
         palavra: "Amora",
         categoria: "Comida",
+        dica1: "Cor Preta",
+        dica2: "Antioxidante",
+        dica3: "Cacho",
     },
     {
         palavra: "Açaí",
         categoria: "Comida",
+        dica1: "Roxo",
+        dica2: "Doce Típico",
+        dica3: "Saudável"
     },
     {
         palavra: "Abacaxi",
         categoria: "Comida",
+        dica1: "Amarelo",
+        dica2: "Coroa",
+        dica3: "Possui Casca"
     },
     {
-        palavra : "Bolo",
-        categoria : "Comida"
+        palavra: "Bolo",
+        categoria: "Comida",
+        dica1: "Aniversário",
+        dica2: "Decorativo",
+        dica3: "Trigo, leite..."
     },
     {
         palavra: "Banana",
         categoria: "Comida",
+        dica1: "Potácil",
+        dica2: "Amarela",
+        dica3: "Cacho"
     },
     {
         palavra: "Brigadeiro",
         categoria: "Comida",
+        dica1: "Docinho de...",
+        dica2: "Chocolate",
+        dica3: "Confete"
     },
     {
         palavra: "Bolacha",
         categoria: "Comida",
+        dica1: "Salgada e Doce",
+        dica2: "Café ou lanche",
+        dica3: "Biscoito ou..."
     },
     {
         palavra: "Beringela",
         categoria: "Comida",
+        dica1: "Roxa",
+        dica2: "Prima do Pimentão",
+        dica3: "Formato suspeito"
     },
     {
         palavra : "Camarão",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1: "Laranja",
+        dica2: "Do mar",
+        dica3: "Crustáceo"
     },
     {
         palavra: "Coxinha",
         categoria: "Comida",
+        dica1: "Salgado",
+        dica2: "Grande ou pequena",
+        dica3: "100% brasileira"
     },
     {
         palavra: "Charque",
         categoria: "Comida",
+        dica1: "Carne",
+        dica2: "Salgada",
+        dica3: "Dessecada"
     },
     {
         palavra: "Cuscuz",
         categoria: "Comida",
+        dica1: "Derivado do milho",
+        dica2: "Nordestina",
+        dica3: "Flocão"
     },
     {
         palavra: "Cachorro quente",
         categoria: "Comida",
+        dica1: "Salsicha",
+        dica2: "Molho",
+        dica3: "Vai querer completo?"
     },
     {
         palavra: "Chocolate",
         categoria: "Comida",
+        dica1: "Doce",
+        dica2: "Branco e preto",
+        dica3: "bombom, barra..."
     },
     {
         palavra : "Damasco",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1: "Fruta",
+        dica2: "Laranja",
+        dica3: "Um caroço"
     },
     {
         palavra: "Dobradinha",
         categoria: "Comida",
+        dica1: "Feijão branco",
+        dica2: "Apimentada",
+        dica3: "Festa Junína"
     },
     {
         palavra: "Doce de leite",
         categoria: "Comida",
+        dica1: "Sobremesa",
+        dica2: "Pastoso ou sólido",
+        dica3: "Lata de vidro"
     },
     {
         palavra: "Donuts",
         categoria: "Comida",
+        dica1: "Redondo",
+        dica2: "Sobremesa",
+        dica3: "Americana"
     },
     {
         palavra : "Empada",
-        categoria : "Comida"
+        categoria : "Comida",
+        dica1: "Doce ou Salgada",
+        dica2: "Torta pequena",
+        dica3: "Crocante"
     },
     {
         palavra: "Enroladinho",
         categoria: "Comida",
+        dica1: "Salgado",
+        dica2: "Feiras",
+        dica3: "Salsicha"
     },
     {
         palavra: "Empadão",
         categoria: "Comida",
+        dica1: "Recheios variados",
+        dica2: "Frango",
+        dica3: "Empada grande"
     },
     {
         palavra: "Espaguete",
         categoria: "Comida",
+        dica1: "Massa",
+        dica2: "Almôndegas",
+        dica3: "Garfo"
     },
     {
         palavra: "Ervilha",
         categoria: "Comida",
+        dica1: "Verde",
+        dica2: "A princesa e a...",
+        dica3: "Milho e..."
     },
     {
         palavra : "Framboesa",
         categoria : "Comida",
+        dica1: "Vermelha",
+        dica2: "Cacho",
+        dica3: "Xarope, geleia..."
     },
     {
         palavra: "Feijão",
         categoria: "Comida",
+        dica1: "Almoço",
+        dica2: "Ferro e cálcio",
+        dica3: "Preto, branco, verde..."
     },
     {
         palavra: "Frango",
         categoria: "Comida",
+        dica1: "Carne",
+        dica2: "Recheio",
+        dica3: "Assado, cozido"
     },
     {
         palavra: "Figado",
