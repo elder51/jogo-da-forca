@@ -21,13 +21,6 @@ const palavras = [
         dica3: "Cacho",
     },
     {
-        palavra: "Açaí",
-        categoria: "Comida",
-        dica1: "Roxo",
-        dica2: "Doce Típico",
-        dica3: "Saudável"
-    },
-    {
         palavra: "Abacaxi",
         categoria: "Comida",
         dica1: "Amarelo",
@@ -35,23 +28,16 @@ const palavras = [
         dica3: "Possui Casca"
     },
     {
-        palavra: "Bolo",
-        categoria: "Comida",
-        dica1: "Aniversário",
-        dica2: "Decorativo",
-        dica3: "Trigo, leite..."
-    },
-    {
         palavra: "Banana",
         categoria: "Comida",
-        dica1: "Potácil",
+        dica1: "Fruta",
         dica2: "Amarela",
         dica3: "Cacho"
     },
     {
         palavra: "Brigadeiro",
         categoria: "Comida",
-        dica1: "Docinho de...",
+        dica1: "Doce",
         dica2: "Chocolate",
         dica3: "Confete"
     },
@@ -98,6 +84,7 @@ const palavras = [
         dica3: "Flocão"
     },
     {
+        origin: "Cachorro quente",
         palavra: "Cachorro quente",
         categoria: "Comida",
         dica1: "Salsicha",
@@ -124,13 +111,6 @@ const palavras = [
         dica1: "Feijão branco",
         dica2: "Apimentada",
         dica3: "Festa Junína"
-    },
-    {
-        palavra: "Doce de leite",
-        categoria: "Comida",
-        dica1: "Sobremesa",
-        dica2: "Pastoso ou sólido",
-        dica3: "Lata de vidro"
     },
     {
         palavra: "Donuts",
@@ -232,15 +212,7 @@ const palavras = [
         categoria : "Comida",
     },
     {
-        palavra : "Jiló",
-        categoria : "Comida"
-    },
-    {
         palavra: "Jerimum",
-        categoria: "Comida",
-    },
-    {
-        palavra: "Jaca",
         categoria: "Comida",
     },
     {
@@ -250,18 +222,6 @@ const palavras = [
     {
         palavra: "Jenipapo",
         categoria: "Comida",
-    },
-    {
-        palavra: "Kibe",
-        categoria: "Comida",
-    },
-    {
-        palavra: "Kiwi",
-        categoria: "Comida",
-    },
-    {
-        palavra : "Limão",
-        categoria : "Comida",
     },
     {
         palavra: "Linguiça",
@@ -274,14 +234,6 @@ const palavras = [
     {
         palavra: "Lagosta",
         categoria: "Comida",
-    },
-    {
-        palavra: "Lámen",
-        categoria: "Comida",
-    },
-    {
-        palavra : "Mamão",
-        categoria : "Comida",
     },
     {
         palavra: "Melancia",
@@ -308,14 +260,6 @@ const palavras = [
         categoria: "Comida",
     },
     {
-        palavra: "Nabo",
-        categoria: "Comida",
-    },
-    {
-        palavra: "Noz",
-        categoria: "Comida",
-    },
-    {
         palavra : "Omelete",
         categoria : "Comida",
     },
@@ -324,23 +268,11 @@ const palavras = [
         categoria: "Comida",
     },
     {
-        palavra: "Ovo",
-        categoria: "Comida",
-    },
-    {
         palavra: "Ostra",
         categoria: "Comida",
     },
     {
-        palavra : "Pasta de amendoim",
-        categoria : "Comida",
-    },
-    {
         palavra: "Palmito",
-        categoria: "Comida",
-    },
-    {
-        palavra: "Pão",
         categoria: "Comida",
     },
     {
@@ -376,19 +308,11 @@ const palavras = [
         categoria: "Comida",
     },
     {
-        palavra: "Romã",
-        categoria: "Comida",
-    },
-    {
         palavra : "Salgadinho",
         categoria : "Comida",
     },
     {
         palavra: "Sushi",
-        categoria: "Comida",
-    },
-    {
-        palavra: "Sopa",
         categoria: "Comida",
     },
     {
@@ -408,20 +332,8 @@ const palavras = [
         categoria: "Comida",
     },
     {
-        palavra: "Tacos",
-        categoria: "Comida",
-    },
-    {
         palavra: "Trufa",
         categoria: "Comida",
-    },
-    {
-        palavra: "Tofu",
-        categoria: "Comida",
-    },
-    {
-        palavra : "Uva",
-        categoria : "Comida"
     },
     {
         palavra: "Vatapá",
@@ -444,15 +356,7 @@ const palavras = [
         categoria: "Comida",
     },
     {
-        palavra: "Anel",
-        categoria: "Objeto",
-    },
-    {
         palavra: "Alicate",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Anzol",
         categoria: "Objeto",
     },
     {
@@ -480,10 +384,6 @@ const palavras = [
         categoria: "Objeto"
     },
     {
-        palavra: "Bolo",
-        categoria: "Objeto",
-    },
-    {
         palavra: "Carta",
         categoria: "Objeto",
     },
@@ -498,14 +398,6 @@ const palavras = [
     {
         palavra: "Caneta",
         categoria: "Objeto"
-    },
-    {
-        palavra: "Copo",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Dado",
-        categoria: "Objeto",
     },
     {
         palavra: "Disco",
@@ -544,14 +436,6 @@ const palavras = [
         categoria: "Objeto",
     },
     {
-        palavra: "Faca",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Fone de ouvido",
-        categoria: "Objeto",
-    },
-    {
         palavra: "Frasco",
         categoria: "Objeto",
     },
@@ -568,6 +452,7 @@ const palavras = [
         categoria: "Objeto",
     },
     {
+        origin: "Guarda chuva",
         palavra: "Guarda chuva",
         categoria: "Objeto",
     },
@@ -593,14 +478,6 @@ const palavras = [
     },
     {
         palavra: "Impressora",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Ioiô",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Ímã",
         categoria: "Objeto",
     },
     {
@@ -700,10 +577,6 @@ const palavras = [
         categoria: "Objeto"
     },
     {
-        palavra: "Pote",
-        categoria: "Objeto",
-    },
-    {
         palavra: "Quadro",
         categoria: "Objeto",
     },
@@ -713,10 +586,6 @@ const palavras = [
     },
     {
         palavra: "Relógio",
-        categoria: "Objeto",
-    },
-    {
-        palavra: "Roda",
         categoria: "Objeto",
     },
     {
@@ -797,8 +666,6 @@ const palavras = [
         dica1:"orelhudo",
         dica2:"cinza",
         dica3:"shrek"
-
-
     },
     {
         nome: "Inhame",
@@ -806,7 +673,6 @@ const palavras = [
         dica1:"raiz",
         dica2:"branco",
         dica3:"nordestina"
-
     },
     {
         nome: "Gargantilha",
@@ -814,7 +680,6 @@ const palavras = [
         dica1:"pescoço",
         dica2:"sexy",
         dica3:"colado"
-
     },
     {
         nome: "Barba Ruiva",
@@ -822,7 +687,6 @@ const palavras = [
         dica1:"rio",
         dica2:"laranja",
         dica3:"homem"
-
     },
     {
         nome: "Tacape",
@@ -830,7 +694,6 @@ const palavras = [
         dica1:"idade da pedra",
         dica2:"pedra e madeira",
         dica3:"corda pedra de marmore"
-
     },
     {
         nome: "Profissão",
@@ -838,7 +701,6 @@ const palavras = [
         dica1:"tatuador",
         dica2:"medico",
         dica3:"desenvolverdor de sistemas"
-
     },
     {
         nome: "Empecilho",
@@ -846,7 +708,6 @@ const palavras = [
         dica1:"dificuldade",
         dica2:"problema",
         dica3:"dificil"
-
     },
     {
         nome: "Psicanálise",
@@ -854,7 +715,6 @@ const palavras = [
         dica1:"piscicologico",
         dica2:"mental",
         dica3:"comportamental"
-
     },
     {
         nome: "Cãibra",
@@ -862,7 +722,6 @@ const palavras = [
         dica1:"muscular",
         dica2:"torsão",
         dica3:"choque"
-
     },
     {
         nome: "Lazulita",
@@ -870,7 +729,6 @@ const palavras = [
         dica1:"azul",
         dica2:"tem no minecraft",
         dica3:"faz encatamento"
-
     },
     {
         nome: "Echarpe",
@@ -878,7 +736,6 @@ const palavras = [
         dica1:"rosangela usa",
         dica2:"pano",
         dica3:"acessorio"
-
     },
     {
         nome: "Vestíbulo",
@@ -912,38 +769,8 @@ const palavras = [
         categoria: "que puxa, agarra, fascina e atrai",
     },
     {
-        nome: "Balaústre",
-        categoria: "sustenta um peitoril ou corrimão",
-    },
-    {
-        nome: "Oboé",
-        categoria: "instrumento musical",
-    },
-    {
-        nome: "Go",
-        categoria: "jogo estrátegico para tabuleiro",
-    },
-    {
-        nome: "Taiko",
-        categoria: "tambor de origem japonesa",
-    },
-    {
         origin: "Helena Ignez",
         nome: "Helena Ignez",
         categoria: "Atriz Brasileira",
     },
-    {
-        origin: "Júlio Bressane",
-        nome: "Júlio Bressane",
-        categoria: "Diretor de Cinema Brasileiro",
-    },
-    {
-        origin: "Rogério Sganzerla",
-        nome: "Rogério Sganzerla",
-        categoria: "Diretor de Cinema Brasileiro",
-    },
-    {
-        nome: "Epítome",
-        categoria: "Resume noções básicas de um assunto, de uma arte etc",
-    }
 ]
