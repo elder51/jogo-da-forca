@@ -23,7 +23,7 @@ const palavras = [
     {
         palavra: "Abacaxi",
         categoria: "Comida",
-        dica1: "Amarelo",
+        dica1: "Possui cor amarela",
         dica2: "Coroa",
         dica3: "Possui Casca"
     },
@@ -31,7 +31,7 @@ const palavras = [
         palavra: "Banana",
         categoria: "Comida",
         dica1: "Fruta",
-        dica2: "Amarela",
+        dica2: "Possui cor amarela",
         dica3: "Cacho"
     },
     {
@@ -51,14 +51,14 @@ const palavras = [
     {
         palavra: "Beringela",
         categoria: "Comida",
-        dica1: "Roxa",
+        dica1: "Cor roxa",
         dica2: "Prima do Pimentão",
         dica3: "Formato suspeito"
     },
     {
         palavra : "Camarão",
         categoria : "Comida",
-        dica1: "Laranja",
+        dica1: "Cor Laranja",
         dica2: "Do mar",
         dica3: "Crustáceo"
     },
@@ -102,7 +102,7 @@ const palavras = [
         palavra : "Damasco",
         categoria : "Comida",
         dica1: "Fruta",
-        dica2: "Laranja",
+        dica2: "Cor laranja",
         dica3: "Um caroço"
     },
     {
@@ -150,14 +150,14 @@ const palavras = [
     {
         palavra: "Ervilha",
         categoria: "Comida",
-        dica1: "Verde",
+        dica1: "Cor verde",
         dica2: "A princesa e a...",
         dica3: "Milho e..."
     },
     {
         palavra : "Framboesa",
         categoria : "Comida",
-        dica1: "Vermelha",
+        dica1: "Cor vermelha",
         dica2: "Cacho",
         dica3: "Xarope, geleia..."
     },
@@ -178,168 +178,168 @@ const palavras = [
     {
         palavra: "Figado",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Carne",
+        dica2:"Mole",
+        dica3:"Também é um órgão"
     },
     {
         palavra: "Fricassé",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Receita com frango",
+        dica2:"Molho branco",
+        dica3:"Batata palha"
     },
     {
         palavra : "Gelatina",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Frio",
+        dica2:"Sobremesa",
+        dica3:"Diversos sabores"
     },
     {
         palavra: "Galeto",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Natal",
+        dica2:"Assado na Brasa",
+        dica3:"Deriva do galo"
     },
     {
         palavra: "Guacamole",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Cor verde",
+        dica2:"Molho",
+        dica3:"Purê de abacate"
     },
     {
         palavra: "Goiabada",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Doce",
+        dica2:"Fruta",
+        dica3:"Romeu e Julieta"
     },
     {
         palavra: "Guisado",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Ensopado",
+        dica2:"Preparado em panela",
+        dica3:"Carne e gordura"
     },
     {
         palavra : "Hambúrguer",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fast Food",
+        dica2:"Pão",
+        dica3:"Queijo, cebola..."
     },
     {
         palavra : "Iogurte",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Rosa ou branco",
+        dica2:"Doce",
+        dica3:"Laticínios"
     },
     {
         palavra: "Jerimum",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fruta",
+        dica2:"Tem sementes pretas",
+        dica3:"Laranja"
     },
     {
         palavra: "Jabuticaba",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fruta",
+        dica2:"Faz bem pro coração",
+        dica3:"Cor roxa"
     },
     {
         palavra: "Jenipapo",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fruta",
+        dica2:"Cor amarelo-pardeado",
+        dica3:"Ácida"
     },
     {
         palavra: "Linguiça",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Carne de porco",
+        dica2:"Comida roliça",
+        dica3:"Fina, grossa ou comprida"
     },
     {
         palavra: "Lasanha",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"De carne, ou frango",
+        dica2:"Massa, ou massa pronta",
+        dica3:"Alomoço"
     },
     {
         palavra: "Lagosta",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Crustáceo",
+        dica2:"Possui garras",
+        dica3:"Cor vermelha"
     },
     {
         palavra: "Melancia",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fruta",
+        dica2:"Aquosa",
+        dica3:"Cor verde e vermelha"
     },
     {
         palavra: "Mandioca",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Raíz",
+        dica2:"Interior branco",
+        dica3:"Também conhecida como macaxeira"
     },
     {
         palavra: "Milho",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Festa junina",
+        dica2:"Receitas variadas",
+        dica3:"Possui sabugo"
     },
     {
         palavra: "Mousse",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Sobremesa",
+        dica2:"Fria",
+        dica3:"Sabores variados"
     },
     {
         palavra : "Nuggets",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Comida congelada",
+        dica2:"Fritura",
+        dica3:"De frango"
     },
     {
         palavra: "Nachos",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Apimentada",
+        dica2:"Crocante",
+        dica3:"Formarto triângular"
     },
     {
         palavra : "Omelete",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Possui verduras",
+        dica2:"Café da manhã",
+        dica3:"Ovos"
     },
     {
         palavra: "Orégano",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Tempero",
+        dica2:"Dá aroma e sabor",
+        dica3:"Cor preta e verde"
     },
     {
         palavra: "Ostra",
         categoria: "Comida",
-        dica1:"",
+        dica1:"Molusco",
         dica2:"",
         dica3:""
     },
