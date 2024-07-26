@@ -44,38 +44,38 @@
         </div>
     </div>
 
-    <dialog id="login">
+    <dialog class="login" id="login">
         <div id="fazerLogin" >
             <form onsubmit="handlesubmit(event)">
 
                 <div>
-                    <p onclick="fecharLogin()">&#10060;</p>
+                    <p class="xis" onclick="fecharLogin()">&#10060;</p>
                 </div>
 
                 <div>
-                    <h1>Login</h1>
+                    <h1>LOGIN</h1>
                 </div>
             
+                Usuário
                 <div>
-                    <span>Usuário</span>
-                    <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
-                    <p id="userError"> Usuário não cadastrado</p>
+                    <input type="text" name="user" placeholder="Nome" minlength="3" maxlength="12" required>
+                    <p class="erro" id="userError"> Usuário não cadastrado</p>
                 </div>
             
+                Senha
                 <div>
-                    <span>Senha</span>
-                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
-                    <p id="passwordError">Senha incorreta</p>
+                    <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
+                    <p class="erro" id="passwordError">Senha incorreta</p>
                 </div>
             
-                <div>
-                    <p onclick="abrirRecovery()">esqueci a senha</p>
+                <div class="redirect">
+                    <p cl onclick="abrirRecovery()">esqueci a senha</p>
             
                     <p onclick="abrirCriarConta()">criar conta</p>
                 </div>
             
                 <div>
-                    <input type="submit" value="login">
+                    <input class="entrar" type="submit" value="entrar">
                 </div>
             </form>
         </div>
@@ -84,38 +84,38 @@
             <form onsubmit="criarlogin(event)">
 
                 <div>
-                    <p onclick="fecharLogin()">&#10060;</p>
+                    <p class="xis" onclick="fecharLogin()">&#10060;</p>
                 </div> 
 
                 <div>
-                    <h1>Criar conta</h1>
+                    <h1>CADASTRAR</h1>
                 </div>
 
+                Usuário
                 <div>
-                    <span>Usuário</span>
-                    <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="15" required>
+                    <input type="text" name="user" placeholder="Nome" minlength="3" maxlength="15" required>
                 </div>
             
+                Senha
                 <div>
-                    <span>Senha</span>
-                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+                    <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
                 </div>
 
                 <div>
-                    <p>Pergunta de recuperação</p>
-                    <p>Defina uma pergunta e resposta que só você possa saber.</p>
+                    <p class="espaco">PERGUNTA DE RECUPERAÇÃO</p>
+                    <p>Defina uma pergunta com a resposta que só você saiba.</p>
                 </div>
 
                 <div>
-                    <input type="text" name="question" placeholder="P: quando ganhei meu primeiro celular?" maxlength="25" required>
+                    <input type="text" name="question" placeholder="P - Minha fruta favorita?" maxlength="25" required>
                 </div>
 
                 <div>
-                    <input type="text" name="answer" placeholder="R: 2013" maxlength="10" required>
+                    <input type="text" name="answer" placeholder="R - Maçã" maxlength="10" required>
                 </div>
     
                 <div>
-                    <input type="submit" value="Criar">
+                    <input class="entrar" type="submit" value="Criar">
                 </div>
             </form>
         </div>
@@ -124,39 +124,39 @@
             <form onsubmit="Recovery(event)">
 
                 <div>
-                    <p onclick="fecharLogin()">&#10060;</p>
+                    <p class="xis" onclick="fecharLogin()">&#10060;</p>
                 </div>
 
                 <div>
                     <div>
-                        <h1>Recuperar senha</h1>
+                        <h1>ESQUECI A SENHA</h1>
                     </div>
     
                     <div>
-                        <p id="pergunta">o dia em que eu pulei de paraquedas</p>
+                        <p id="pergunta">Minha fruta favorita?</p>
                     </div>
             
                     <div>
-                        <input id="resposta" placeholder="resposta" type="text" required>
-                        <p id="error">Resposta incorreta</p>
+                        <input id="resposta" placeholder="Resposta" type="text" required>
+                        <p class="erro" id="error">Resposta incorreta</p>
                     </div>
     
                     <div>
-                        <input type="submit" value="responder">
+                        <input class="entrar" type="submit" value="responder">
                     </div>
                 </div>   
 
                 <div>
                     <div>
-                        <h1>Nova senha</h1>
+                        <h1>NOVA SENHA</h1>
                     </div>
 
                     <div>
-                        <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+                        <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
                     </div>
 
                     <div>
-                        <input type="submit" value="trocar senha">
+                        <input class="entrar" type="submit" value="trocar senha">
                     </div>
                 </div>
 

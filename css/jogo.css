@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap);
 
 
 body {
@@ -62,7 +62,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 40px;
     border: 3px solid;
     border-radius: 15px;
@@ -80,14 +80,14 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 50px;
     margin-left: 40px;
 }
 
 .buttonM {
     align-items: center;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 45px;
     color: white;
     border: transparent;
@@ -109,7 +109,7 @@ body {
 .tecla {
     width: 50px;
     text-align: center;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 45px;
     color: white;
     border: transparent;
@@ -136,7 +136,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: right;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 40px;
     margin-top: -280px;
     margin-left: 150px;
