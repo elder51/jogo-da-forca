@@ -432,7 +432,7 @@ function scoreload() {
     const users = JSON.parse(localStorage.getItem('users'))
     const nick =  JSON.parse(localStorage.getItem('nick'))
 
-    if(!nick){
+    if(nick){
         for(let user of users) {
             if(user.nick == nick) {
                 if(score > user.score) {
