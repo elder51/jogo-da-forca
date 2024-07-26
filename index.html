@@ -25,16 +25,25 @@
                     <div id="userInter" class="font2" style="display: none;">
                         <p>Usuário:&nbsp;</p>
                         <p id="nick"></p>
+                        <p>&nbsp;&nbsp;&nbsp;</p>
+
+                        <div>
+                            <button class="font" onclick="logout()">logout</button>
+                        </div>
                     </div>
                 </div>
-        
+
                 <div class="center">
-                    <a href="./jogo.html"><button class="button">Jogar</button></a>
+                    <div>
+                        <a href="./jogo.html"><button class="button">Jogar</button></a>
+                    </div>
+            
+                    <div>
+                        <a href="./sobre.html"><button class="button">Sobre</button></a>
+                    </div> 
                 </div>
         
-                <div class="center">
-                    <a href="./sobre.html"><button class="button">Sobre</button></a>
-                </div>
+                
         
                 <div class="right">
                     <a href="./ranking.html"><button class="font">Ranking</button></a>
@@ -44,9 +53,9 @@
         </div>
     </div>
 
-    <dialog class="login" id="login">
-        <div id="fazerLogin" >
-            <form onsubmit="handlesubmit(event)">
+    <dialog id="login">
+        <div id="fazerLogin">
+            <form onsubmit="handlesubmit(event)" class="login">
 
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
@@ -55,23 +64,17 @@
                 <div>
                     <h1>LOGIN</h1>
                 </div>
-            
-                Usuário
+             
+                <span>Usuário</span>
                 <div>
-                    <span>Usuário</span>
-                    <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
-                    <p id="userError"></p>
                     <input type="text" name="user" placeholder="Nome" minlength="3" maxlength="12" required>
-                    <p class="erro" id="userError"> Usuário não cadastrado</p>
+                    <p class="erro" id="userError"></p>
                 </div>
             
-                Senha
+                <span>Senha</span>
                 <div>
-                    <span>Senha</span>
-                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
-                    <p id="passwordError"></p>
                     <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
-                    <p class="erro" id="passwordError">Senha incorreta</p>
+                    <p class="erro" id="passwordError"></p>
                 </div>
             
                 <div class="redirect">
@@ -87,7 +90,7 @@
         </div>
 
         <div id="criarConta" style="display: none;">
-            <form onsubmit="criarlogin(event)">
+            <form  onsubmit="criarlogin(event)" class="login">
 
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
@@ -127,46 +130,48 @@
         </div>
 
         <div id="recovery-password" style="display: none;">
-            <form onsubmit="Recovery(event)">
+            <form  onsubmit="Recovery(event)" class="login">
+        
+                <div>
+                    <p class="xis" onclick="fecharLogin()">&#10060;</p>
+                </div>
+        
+                <div>
+                    <h1>ESQUECI A SENHA</h1>
+                </div>
+        
+                <div>
+                    <p id="pergunta">Minha fruta favorita?</p>
+                </div>
+        
+                <div>
+                    <input name="resposta" placeholder="Resposta" type="text" required>
+                    <p class="erro" id="error"></p>
+                </div>
+        
+                <div>
+                    <input class="entrar" type="submit" value="responder">
+                </div>
+            </form>
+        </div>
+
+        <div id="newPassword" style="display: none;">
+            <form  onsubmit="changePassword(event)" class="login">
 
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
                 </div>
 
                 <div>
-                    <div>
-                        <h1>ESQUECI A SENHA</h1>
-                    </div>
+                    <h1>NOVA SENHA</h1>
+                </div>
     
-                    <div>
-                        <p id="pergunta">Minha fruta favorita?</p>
-                    </div>
-            
-                    <div>
-                        <input name="resposta" placeholder="resposta" type="text" required>
-                        <p id="error"></p>
-                        <input id="resposta" placeholder="Resposta" type="text" required>
-                        <p class="erro" id="error">Resposta incorreta</p>
-                    </div>
-    
-                    <div>
-                        <input class="entrar" type="submit" value="responder">
-                    </div>
-                </div>   
-
                 <div>
-                    <div>
-                        <h1>NOVA SENHA</h1>
-                    </div>
-
-                    <div>
-                        <input type="password" name="password" placeholder="********" minlength="8" maxlength="16">
-                        <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
-                    </div>
-
-                    <div>
-                        <input class="entrar" type="submit" value="trocar senha">
-                    </div>
+                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16">
+                </div>
+    
+                <div>
+                    <input class="entrar" type="submit" value="trocar senha">
                 </div>
 
             </form>

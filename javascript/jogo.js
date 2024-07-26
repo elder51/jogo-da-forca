@@ -23,7 +23,6 @@ document.getElementById("score").innerHTML = score;
 document.getElementById("dica").innerHTML = dica;
 document.getElementById("chances").innerHTML = chances;
 
-
 const frasePalavraCorreta = [
     ["Palavra correta! Continue assim!!","Procurando nova palavra no dicionario...","Palavra encontrada!!"],
     ["Você acertou! Parabéns!","Aguarde um momento...","Você conseguiu!!"]
@@ -267,6 +266,7 @@ function modal(V) {
 
     if (V == 'certificado') {
         dialog.showModal()
+        scoreload()
         setTimeout(() => {
             window.location.replace("./index.html");
         }, 10000)
@@ -392,3 +392,24 @@ function colocarFrase(arrayDeFrases) {
     }
 }
 
+function scoreload() {
+
+    const score = document.getElementById('score').innerHTML
+
+    const users = JSON.parse(localStorage.getItem('users'))
+    const nick =  JSON.parse(localStorage.getItem('nick'))
+
+    if(!nick){
+        for(let user of users) {
+            if(user.nick == nick) {
+                if(score > user.score) {
+                    user.score = score
+                    localStorage.setItem('users',JSON.stringify(users))
+                    break
+                }
+            }
+        }
+    }
+    
+    window.location.replace("./index.html");
+}

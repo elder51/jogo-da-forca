@@ -56,23 +56,26 @@ body{
 }
 
 .font {
+    height: 35px;
     color: white;
     background-color: transparent;
-    border: transparent;
+    border: 2px transparent;
     border-bottom: 2px solid;
     border-radius: 5px;
     display: inline-flex;
     font-family: "Shadows Into Light", cursive;
-    font-size: 35px;
+    font-size: 25px;
     margin: 0px;
-    margin-top: -5px;
     padding: 0px;
+    margin-top: 25px;
 }
 .font:hover {
     transform: scale(1.2);
     color: gray;
 }
+
 .font2 {
+    height: 70px;
     color: white;
     background-color: transparent;
     display: inline-flex;
@@ -81,28 +84,35 @@ body{
     margin: 0px;
     padding: 0px;
     border: 2px transparent;
-    margin-top: -30px;
+    margin-top: -5px;
 }
 
 .left {
-    margin-left: -385px;
-    margin-right: 385px;
-    margin-top: -10px;
+    width: 300px;
+    margin: 0px;
+    margin-left: -315px;
+    margin-right: 315px;
+    margin-top: -30px;
 }
 
 .right {
-    margin-left: 455px;
-    margin-right: -455px;
-    margin-top: -20px;
+    margin-left: 520px;
+    margin-right: -520px;
+    margin-top: -30px;
 }
 .center {
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    margin-left: -200;
+    margin-right: 200;
+}
+dialog {
+    border: transparent;
+    background-color: transparent;
 }
 
 .login {
     font-family: "Noto Serif", serif;
-    border: none;
+    border: solid black;
     color: white;
     height: 500PX;
     width: 550px;
@@ -110,7 +120,6 @@ body{
     border-radius: 30px;
     box-shadow: 5px 5px 5px black;
     text-align: center;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -144,5 +153,4 @@ body{
 
 .xis {
     font-size: 20px;
-
 }

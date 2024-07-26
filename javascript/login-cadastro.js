@@ -1,5 +1,12 @@
 const user = document.getElementById("nick")
-let nome = ""
+let nome = null
+let nUsuario = JSON.parse(localStorage.getItem('nick'))
+
+if(nUsuario){
+    user.innerHTML = nUsuario
+    document.getElementById("log-in").style.display = "none"
+    document.getElementById("userInter").style.display = "flex"
+}
 
 // tela/login
 function handlesubmit(event) {
@@ -25,12 +32,14 @@ function handlesubmit(event) {
 
     if (!userfound) {
         document.getElementById('userError').innerHTML = 'Usuário não cadastrado'
+        return
     }
 
     if (userfound.password !== password) {
         document.getElementById('userError').innerHTML = ' '
         document.getElementById('passwordError').innerHTML = 'senha incorreta'
         nome = nick
+        return
     }
 
     if (userfound.nick == nick && userfound.password === password) {
@@ -41,6 +50,7 @@ function handlesubmit(event) {
         document.getElementById("log-in").style.display = "none"
         document.getElementById("userInter").style.display = "flex"
 
+        localStorage.setItem('nick',JSON.stringify(userfound.nick))
         fecharLogin()
     }
 }    
@@ -75,8 +85,7 @@ function criarlogin(event) {
 
     localStorage.setItem('users',JSON.stringify(users))
     
-    fecharLogin()
-    
+    fecharLogin()  
 }
 
 function Recovery(event) {
@@ -88,7 +97,6 @@ function Recovery(event) {
 
     const users =   JSON.parse(localStorage.getItem('users'))
     const answer = form.get('resposta')
-    const password = CryptoJS.SHA256(form.get('password')).toString()
 
     let userfound = null
 
@@ -101,9 +109,34 @@ function Recovery(event) {
     
     if (userfound.answer != answer) {
         error.innerHTML = 'Resposta incorreta'
+        return
     } else {
         error.innerHTML = ' '
+        document.getElementById('newPassword').style.display = 'contents'
+        document.getElementById('recovery-password').style.display = 'none'
     }
+}
+
+function changePassword(event) {
+    event.preventDefault()
+
+    const form = new FormData(event.target)
+
+    const password = CryptoJS.SHA256(form.get('password')).toString()
+    const users =   JSON.parse(localStorage.getItem('users'))
+
+    let userfound = null
+
+    for(const user of users) {
+        if(user.nick == nome) {
+            userfound = user
+            break
+        }
+    }
+
+    userfound.password = password
+    localStorage.setItem('users',JSON.stringify(users))
+    fecharLogin()
 }
 
 // buttons
@@ -112,6 +145,9 @@ function abrirLogin() {
 }
 
 function abrirRecovery() {
+    if(!nome){
+        return
+    }
 
     const pergunta = document.getElementById('pergunta')
 
@@ -130,40 +166,30 @@ function abrirRecovery() {
     pergunta.innerHTML = userfound.question
 
     document.getElementById("fazerLogin").style.display = 'none'
-    document.getElementById("recovery-password").style.display = 'flex'
+    document.getElementById("recovery-password").style.display = 'contents'
 }
 
 function abrirCriarConta() {
     document.getElementById("fazerLogin").style.display = 'none'
-    document.getElementById("criarConta").style.display = 'flex'
+    document.getElementById("criarConta").style.display = 'contents'
 }
 
 function recuperar() {
-    document.getElementById("fazerLogin").style.display = 'flex' 
+    document.getElementById("fazerLogin").style.display = 'contents' 
     document.getElementById("recuperar").style.display = ''
 }
 
-function fecharLogin() {    
+function fecharLogin() {
     document.getElementById('login').close()
-    document.getElementById("fazerLogin").style.display = 'flex'
+    document.getElementById("fazerLogin").style.display = 'contents'
     document.getElementById("criarConta").style.display = 'none'
-    document.getElementById("recovery-password").style.display = 'none'
+    document.getElementById("recovery-password").style.display = 'none' 
+    document.getElementById('newPassword').style.display = 'none'
     nome = ""
 }
 
-function scoreload() {
-
-    const score = document.getElementById('score').innerHTML
-
-    const users = JSON.parse(localStorage.getItem('users'))
-
-    for(let user of users) {
-        if(user.nick == nome) {
-            if(score > user.score) {
-                user.score = score
-                localStorage.setItem('users',JSON.stringify(users))
-                break
-            }
-        }
-    }
+function logout() {
+    localStorage.removeItem('nick')
+    document.getElementById("log-in").style.display = "flex"
+    document.getElementById("userInter").style.display = "none"
 }
