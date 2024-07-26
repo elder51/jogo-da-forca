@@ -12,13 +12,6 @@ let dica = 5;
 let chances = 3;
 let delay = 0;
 
-function playA(V) {
-    document.getElementsByTagName('audio')[V].play()
-}
-function stopA(V) {
-    document.getElementsByTagName('audio')[V].pause()
-}
-
 document.getElementById("score").innerHTML = score;
 document.getElementById("dica").innerHTML = dica;
 document.getElementById("chances").innerHTML = chances;

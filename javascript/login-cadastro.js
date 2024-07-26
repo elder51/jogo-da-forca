@@ -17,6 +17,12 @@ function handlesubmit(event) {
     const form = new FormData(event.target)
 
     const nick = form.get('user')
+
+    if (!nick) {
+        document.getElementById('userError').innerHTML = " "
+        return
+    }
+    
     const password = CryptoJS.SHA256(form.get('password')).toString()
     
 
