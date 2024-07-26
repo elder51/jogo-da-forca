@@ -272,18 +272,26 @@ function modal(V) {
         }, 10000)
 
     } else if (V == 'acertou') {
-        score = score + lErradas + cUsadas
-        dica++
-
-        colocarFrase(frasePalavraCorreta)
+        setTimeout(() => {
+            score = score + lErradas + cUsadas
+            if (tentativas == 0) {
+                dica++
+            }
+            colocarFrase(frasePalavraCorreta)
+        }, 1000)
 
     } else if (V == 'errou') {
-        score = (score-(score/10))
+        setTimeout(() => {
+            score = (score - (score / 10))
 
-        colocarFrase(frasePalavraErrada)
+            colocarFrase(frasePalavraErrada)
+        }, 1000)
+        
 
     } else {
-        colocarFrase(fraseReprovado)
+        setTimeout(() => {
+            colocarFrase(fraseReprovado)
+        }, 1000)
 
     }
 };
@@ -363,25 +371,24 @@ function colocarFrase(arrayDeFrases) {
     function proximaFrase(frase){
         
         setTimeout(()=>{
-            if(delay >= frase.length-1){
-                setTimeout(()=>{
-                    if(frase.length == 2) {
-                        window.location.replace("./index.html")
-    
-                    } else {
-                        document.getElementById("menu-2").style.display = "none"
-                        document.getElementById("menu-1").style.display = "contents"
-                        continuar()
-    
-                    }
-                },1500)
-                
+            if (delay >= frase.length - 1) {
+                if (frase.length == 2) {
+                    window.location.replace("./index.html")
+
+                } else {
+                    document.getElementById("menu-2").style.display = "none"
+                    document.getElementById("menu-1").style.display = "contents"
+                    continuar()
+
+                }
+
             } else {
                 delay++
                 document.getElementById('frase').innerHTML = frase[delay]
                 proximaFrase(frase)
-    
+
             } 
         },2000)
     }
 }
+

@@ -50,11 +50,14 @@
                     </div>
                 
                     <div class="apcao">
-                        <button id="Pedirdica" class="buttonM" onclick="dicas('dica')">&nbsp;Pedir dica&nbsp;</button>
+                        <p>&#128161;=</p>
+                        <p id="dica"></p>
+                        <p>(<p id="chances"></p>)</p>
+                        <button id="Pedirdica" class="buttonM" onclick="dicas('dica')">&nbsp;dicas</button>
                     </div>
                 
                     <div class="apcao">
-                        <button class="buttonM" onclick="reiniciar()">&#128472;&nbsp;Reiniciar&nbsp;</button>
+                        <button class="buttonM" onclick="scoreload('elder')">&#128472;&nbsp;Reiniciar&nbsp;</button>
                     </div>
                 
                     <div class="apcao" style="border: transparent;">
@@ -83,11 +86,11 @@
                         <button class="buttonM" onclick="dicas('voltar')">&#8630;&nbsp;Voltar&nbsp;</button>
                     </div>
                 </div>
-               
             </div>
 
             <!-- Teclado/Alfabeto -->
             <div class="teclado">
+                <div id="nick" style="display: none;">sergio</div>
                 <div id="teclado">
                     <div id="teclas">
                         <button id="tecla-A" class="tecla" onclick="verificar('A')">A</button>
@@ -126,13 +129,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- contador de chances -->
-             <div class="dica" style="border: transparent;">
-                <p>&#128161;=</p>
-                <p id="dica"></p> 
-                <p>(<p id="chances"></p>)</p>     
-             </div>
         </div>
     </div> 
 
@@ -151,7 +147,9 @@
     
     <!-- script's -->
 
-    <script src="./jogo.js"></script>
+    <script src="./javascript/jogo.js"></script>
+
+    <script src="./javascript/login-cadastro.js"></script>
 
 </body>
 

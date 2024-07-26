@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <link rel="stylesheet" href="./css/ranking.css">
+</head>
+<body onclick="sair()">
+    <div class="ranking">
+        <div class="position">
+            <div class="hashe">
+                <h3>#</h3>
+            </div>
+            <div class="nick">
+                <h3>Nick</h3>
+            </div>
+            <div class="score">
+                <h3>Score</h3>
+            </div>
+        </div>
+    </div>
+
+    <script> 
+        const rank = document.getElementsByClassName('ranking')
+        const users = JSON.parse(localStorage.getItem('users'))
+
+        let maior = 0
+        let vMaior = []
+
+        for(let user of users ) {
+            if(user.score > maior) {
+                maior = user.score
+            }
+        }
+        
+        
+        console.log(Math.max(users))
+        
+
+        function sair() {
+            window.location.replace("./index.html");
+        }
+    </script>
+    
+</body>
+</html>

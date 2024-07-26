@@ -18,7 +18,14 @@
         <div class="quadro">
             <div>
                 <div class="left">
-                    <button class="font" onclick="abrirLogin()">login</button>
+                    <div id="log-in" >
+                        <button class="font" onclick="abrirLogin()">login</button>
+                    </div>
+
+                    <div id="userInter" class="font2" style="display: none;">
+                        <p>Usuário:&nbsp;</p>
+                        <p id="nick"></p>
+                    </div>
                 </div>
         
                 <div class="center">
@@ -30,128 +37,134 @@
                 </div>
         
                 <div class="right">
-                    <button class="font">Ranking</button>
+                    <a href="./ranking.html"><button class="font">Ranking</button></a>
+                    
                 </div>
             </div>
         </div>
     </div>
 
     <dialog id="login">
-        <form onsubmit="handlesubmit(event)" id="fazerLogin" style="display: none;">
-            <div>
-                <p onclick="fecharLogin()">&#10060;</p>
-            </div>
-        
-            <div>
-                <span>User</span>
-                <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
-            </div>
-        
-            <div>
-                <span>Senha</span>
-                <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
-            </div>
-        
-            <div>
-                <p>esqueci a senha</p>
-        
-                <p onclick="criarConta">criar conta</p>
-            </div>
-        
-            <div>
-                <input type="submit" value="login">
-            </div>
-        </form>
+        <div id="fazerLogin" >
+            <form onsubmit="handlesubmit(event)">
 
-        <form onsubmit="criarlogin(event)" id="criarConta"> 
-            <div>
-                <span>User</span>
-                <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
-            </div>
-        
-            <div>
-                <span>Senha</span>
-                <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
-            </div>
+                <div>
+                    <p onclick="fecharLogin()">&#10060;</p>
+                </div>
 
-            <div>
-                <input type="submit" value="Criar">
-            </div>
-        </form>
+                <div>
+                    <h1>Login</h1>
+                </div>
+            
+                <div>
+                    <span>Usuário</span>
+                    <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="12" required>
+                    <p id="userError"> Usuário não cadastrado</p>
+                </div>
+            
+                <div>
+                    <span>Senha</span>
+                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+                    <p id="passwordError">Senha incorreta</p>
+                </div>
+            
+                <div>
+                    <p onclick="abrirRecovery()">esqueci a senha</p>
+            
+                    <p onclick="abrirCriarConta()">criar conta</p>
+                </div>
+            
+                <div>
+                    <input type="submit" value="login">
+                </div>
+            </form>
+        </div>
+
+        <div id="criarConta" style="display: none;">
+            <form onsubmit="criarlogin(event)">
+
+                <div>
+                    <p onclick="fecharLogin()">&#10060;</p>
+                </div> 
+
+                <div>
+                    <h1>Criar conta</h1>
+                </div>
+
+                <div>
+                    <span>Usuário</span>
+                    <input type="text" name="user" placeholder="Fagner" minlength="3" maxlength="15" required>
+                </div>
+            
+                <div>
+                    <span>Senha</span>
+                    <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+                </div>
+
+                <div>
+                    <p>Pergunta de recuperação</p>
+                    <p>Defina uma pergunta e resposta que só você possa saber.</p>
+                </div>
+
+                <div>
+                    <input type="text" name="question" placeholder="P: quando ganhei meu primeiro celular?" maxlength="25" required>
+                </div>
+
+                <div>
+                    <input type="text" name="answer" placeholder="R: 2013" maxlength="10" required>
+                </div>
+    
+                <div>
+                    <input type="submit" value="Criar">
+                </div>
+            </form>
+        </div>
+
+        <div id="recovery-password" style="display: none;">
+            <form onsubmit="Recovery(event)">
+
+                <div>
+                    <p onclick="fecharLogin()">&#10060;</p>
+                </div>
+
+                <div>
+                    <div>
+                        <h1>Recuperar senha</h1>
+                    </div>
+    
+                    <div>
+                        <p id="pergunta">o dia em que eu pulei de paraquedas</p>
+                    </div>
+            
+                    <div>
+                        <input id="resposta" placeholder="resposta" type="text" required>
+                        <p id="error">Resposta incorreta</p>
+                    </div>
+    
+                    <div>
+                        <input type="submit" value="responder">
+                    </div>
+                </div>   
+
+                <div>
+                    <div>
+                        <h1>Nova senha</h1>
+                    </div>
+
+                    <div>
+                        <input type="password" name="password" placeholder="********" minlength="8" maxlength="16" required>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="trocar senha">
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </dialog>
 
-    <script>
-        
-        function handlesubmit(event) {
-            event.preventDefault()
-
-            const form = new formData(event.target)
-
-            const email = form.get('email')
-            const password = CryptoJS.SHA256(form.get('password')).toString
-
-            const users =   JSON.parse(localStorage.getItem('users'))
-
-            let emailExists = false
-
-            for(const user of users) {
-                if(user.email == email) {
-                    emailExists = true
-                    return
-                }
-            }
-
-            if(!emailExists) {
-                document.getElementById('').innerHTML = 'Usuário não cadastrado'
-            }
-
-            if(f) {}
-
-            console.log('oi')
-        }
-
-        function criarlogin(event) {
-            event.preventDefault()
-            
-            const form = new FormData(event.target)
-            
-            const user = form.get('user')
-            const password = CryptoJS.SHA256(form.get('password')).toString()
-            console.log('oi')
-
-            const userObj = {
-                user,
-                password
-            }
-            
-            let users = JSON.parse(localStorage.getItem('users'))
-
-            if(!users) {
-                localStorage.setItem('users',JSON.stringify([]))
-                users = []
-            }
-
-            users.push(userObj)
-
-            localStorage.setItem('users',JSON.stringify(users))
-
-            fecharLogin()
-        }
-
-
-
-        function criarConta() {
-            document.getElementById('fazerLogin').style.display = none 
-            document.getElementById('criarConta').style.display = flex
-        }
-
-        function abrirLogin() {
-            document.getElementById('login').showModal()
-        }
-        function fecharLogin() {
-            document.getElementById('login').close()
-        }
-    </script>
+    <script src="./javascript/login-cadastro.js"></script>
 
 </body>
 </html>
