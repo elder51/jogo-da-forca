@@ -39,21 +39,33 @@ const fraseReprovado = [
 
 const palavras = [
     {
-        nome: "Bana-na",
-        categoria: "Fruta"
+        nome: "Abacate",
+        categoria: "comida",
+        dica1: 'É uma fruta',
+        dica2: 'Tem caroço',
+        dica3: 'É verde'
     },
     {
-        nome: "Alface",
-        categoria: "Verdura"
+        nome: "Pimentão",
+        categoria: "Comida",
+        dica1: 'É uma verdura',
+        dica2: 'tem em varias cores',
+        dica3: 'Mais Conhecidas nas cores vermelho, amarelo e verde'
     },
     {
-        nome: "Jumento",
-        categoria: "Animal"
+        nome: "Coruja",
+        categoria: "Animal",
+        dica1: 'Tem olhos grandes',
+        dica2: 'É noturno',
+        dica3: 'Pode girar a cabeça em ate 270º'
     },
     {
-        origin: "Leite Condensado",
-        nome: "Leite Condensado",
-        categoria: "Comida"
+        origin: "Micro-ondas",
+        nome: "Micro-ondas",
+        categoria: "objeto",
+        dica1: 'Tem tempo',
+        dica2: 'Gera calor',
+        dica3: 'Tem na cozinha'
     }
 ];
 
@@ -136,6 +148,7 @@ let tabelaL = [];
 let L = 0;
 let erros = 0;
 let h = 0
+let d = 1
 
 function verificar(letra) {
 
@@ -233,6 +246,7 @@ function restaurar() {
     tentativas = 0
     L = 0
     h = 0
+    d = 1
 
     trocarImg(tentativas)
 
@@ -297,7 +311,7 @@ function modal(V) {
 };
 
 function dicas(V) {
-    if(V == "dica") {
+    if(V == "pedir") {
         document.getElementById("menu-1").style.display = "none"
         document.getElementById("menu-2").style.display = "contents"
         setTimeout(() => {
@@ -320,6 +334,25 @@ function dicas(V) {
             dica--
             chances--
             verificar(palavraSort.nome[indice].toUpperCase())
+        }
+    }
+
+    if (V == 'dica') {
+        switch (d) {
+            case 1:
+                document.getElementById('dica1').innerHTML = palavraSort.dica1
+                document.getElementById('dica-1').style.display = 'flex'
+                d++
+                break;
+            case 2:
+                document.getElementById('dica2').innerHTML = palavraSort.dica2
+                document.getElementById('dica-2').style.display = 'flex'
+                d++
+                break;
+            case 3:
+                document.getElementById('dica3').innerHTML = palavraSort.dica3
+                document.getElementById('dica-3').style.display = 'flex'
+                break;
         }
     }
 

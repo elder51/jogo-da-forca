@@ -141,6 +141,7 @@ function changePassword(event) {
 
 // buttons
 function abrirLogin() {
+    document.getElementById("fazerLogin").style.display = 'contents'
     document.getElementById('login').showModal()
 }
 
@@ -181,10 +182,11 @@ function recuperar() {
 
 function fecharLogin() {
     document.getElementById('login').close()
-    document.getElementById("fazerLogin").style.display = 'contents'
+    document.getElementById("fazerLogin").style.display = 'none'
     document.getElementById("criarConta").style.display = 'none'
     document.getElementById("recovery-password").style.display = 'none' 
     document.getElementById('newPassword').style.display = 'none'
+    document.getElementById('verification').style.display = 'none'
     nome = ""
 }
 
@@ -192,4 +194,22 @@ function logout() {
     localStorage.removeItem('nick')
     document.getElementById("log-in").style.display = "flex"
     document.getElementById("userInter").style.display = "none"
+}
+
+function verification(V) {
+    if(V == 'sim'){
+        window.location.replace("./jogo.html");
+    } else {
+        fecharLogin()
+    }
+}
+
+function openA(){
+    const nick =  JSON.parse(localStorage.getItem('nick'))
+    if(nick){
+        window.location.replace("./jogo.html");
+        return
+    }
+    document.getElementById("verification").style.display = 'flex'
+    document.getElementById('login').showModal()
 }

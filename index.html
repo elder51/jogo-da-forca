@@ -35,7 +35,7 @@
 
                 <div class="center">
                     <div>
-                        <a href="./jogo.html"><button class="button">Jogar</button></a>
+                        <button class="button" onclick="openA()">Jogar</button>
                     </div>
             
                     <div>
@@ -54,7 +54,7 @@
     </div>
 
     <dialog id="login">
-        <div id="fazerLogin">
+        <div id="fazerLogin" style="display: none;">
             <form onsubmit="handlesubmit(event)" class="login">
 
                 <div>
@@ -173,8 +173,24 @@
                 <div>
                     <input class="entrar" type="submit" value="trocar senha">
                 </div>
-
             </form>
+        </div>
+
+        <div id="verification" style="display: none;">
+            <div class="login">
+                <p class="xis" onclick="fecharLogin()">&#10060;</p>
+                <br>
+
+                <h1>Deseja continuar sem efetuar login?</h1>
+                <br>
+                <br>
+                <br>
+        
+                <button class="entrar" onclick="verification('sim')">Sim</button>
+                <button class="entrar" onclick="verification('nao')">Não</button>
+        
+        
+            </div>
         </div>
     </dialog>
 
