@@ -9,6 +9,7 @@ function handlesubmit(event) {
 
     const nick = form.get('user')
     const password = CryptoJS.SHA256(form.get('password')).toString()
+    
 
     const users =   JSON.parse(localStorage.getItem('users'))
     
@@ -22,26 +23,27 @@ function handlesubmit(event) {
         }
     }
 
-    if(!userfound) {
+    if (!userfound) {
         document.getElementById('userError').innerHTML = 'Usuário não cadastrado'
-        
     }
 
-    if(userfound.password !== password) {
-        document.getElementById('userError').innerHTML = ''
-        document.getElementById('passwordError').innerHTML = 'Senha incorreta'
+    if (userfound.password !== password) {
+        document.getElementById('userError').innerHTML = ' '
+        document.getElementById('passwordError').innerHTML = 'senha incorreta'
         nome = nick
     }
-    document.getElementById('passwordError').innerHTML = ''
 
-    user.innerHTML = userfound.nick
-    nome = userfound.nick
-    document.getElementById("log-in").style.display = "none"
-    document.getElementById("userInter").style.display = "flex"
+    if (userfound.nick == nick && userfound.password === password) {
+        document.getElementById('passwordError').innerHTML = ' '
 
-    fecharLogin()
-    
-}
+        user.innerHTML = userfound.nick
+        nome = userfound.nick
+        document.getElementById("log-in").style.display = "none"
+        document.getElementById("userInter").style.display = "flex"
+
+        fecharLogin()
+    }
+}    
 
 function criarlogin(event) {
     event.preventDefault()
@@ -78,7 +80,30 @@ function criarlogin(event) {
 }
 
 function Recovery(event) {
+    event.preventDefault()
 
+    const form = new FormData(event.target)
+
+    const error = document.getElementById('error')
+
+    const users =   JSON.parse(localStorage.getItem('users'))
+    const answer = form.get('resposta')
+    const password = CryptoJS.SHA256(form.get('password')).toString()
+
+    let userfound = null
+
+    for(const user of users) {
+        if(user.nick == nome) {
+            userfound = user
+            break
+        }
+    }
+    
+    if (userfound.answer != answer) {
+        error.innerHTML = 'Resposta incorreta'
+    } else {
+        error.innerHTML = ' '
+    }
 }
 
 // buttons
@@ -86,14 +111,31 @@ function abrirLogin() {
     document.getElementById('login').showModal()
 }
 
+function abrirRecovery() {
+
+    const pergunta = document.getElementById('pergunta')
+
+    const users =   JSON.parse(localStorage.getItem('users'))
+
+    let userfound = null
+
+    
+    for(const user of users) {
+        if(user.nick == nome) {
+            userfound = user
+            break
+        }
+    }
+
+    pergunta.innerHTML = userfound.question
+
+    document.getElementById("fazerLogin").style.display = 'none'
+    document.getElementById("recovery-password").style.display = 'flex'
+}
+
 function abrirCriarConta() {
     document.getElementById("fazerLogin").style.display = 'none'
     document.getElementById("criarConta").style.display = 'flex'
-}
-
-function abrirRecovery() {
-    document.getElementById("fazerLogin").style.display = 'none'
-    document.getElementById("recovery-password").style.display = 'flex'
 }
 
 function recuperar() {
