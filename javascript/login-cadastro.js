@@ -12,6 +12,8 @@ if(nUsuario){
 function handlesubmit(event) {
     event.preventDefault()
 
+    document.getElementById('userError').innerHTML = " "
+
     const form = new FormData(event.target)
 
     const nick = form.get('user')
@@ -19,7 +21,11 @@ function handlesubmit(event) {
     
 
     const users =   JSON.parse(localStorage.getItem('users'))
-    
+
+    if(!users) {
+        document.getElementById('userError').innerHTML = 'Usuário não cadastrado'
+        return
+    }
 
     let userfound = null
 
