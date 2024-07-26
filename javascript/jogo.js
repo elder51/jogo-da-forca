@@ -333,31 +333,32 @@ function dicas(V) {
     if (V == 'dica') {
         switch (d) {
             case 1:
-                document.getElementById('dica1').innerHTML = palavraSort.dica1
-                document.getElementById('dica-1').style.display = 'flex'
+                document.getElementById('dica1').innerHTML = 'Dica 1:&nbsp;' + palavraSort.dica1
                 d++
+                dica--
+                chances--
                 break;
             case 2:
-                document.getElementById('dica2').innerHTML = palavraSort.dica2
-                document.getElementById('dica-2').style.display = 'flex'
+                document.getElementById('dica2').innerHTML = 'Dica 2:&nbsp;' + palavraSort.dica2
                 d++
+                dica--
+                chances--
                 break;
             case 3:
-                document.getElementById('dica3').innerHTML = palavraSort.dica3
-                document.getElementById('dica-3').style.display = 'flex'
+                document.getElementById('dica3').innerHTML = 'Dica 3:&nbsp;' + palavraSort.dica3
+                dica--
+                chances--
                 break;
         }
     }
 
-    if(chances == 0) {
+    if (chances == 0) {
         document.getElementById('Pedirdica').disabled = true
         document.getElementById('Pedirdica').style.color = "gray"
         document.getElementById('Pedirdica').style.cursor = "not-allowed"
 
-        setTimeout(() => {
-            document.getElementById("menu-2").style.display = "none"
-            document.getElementById("menu-1").style.display = "contents"
-        },500)
+        document.getElementById("menu-2").style.display = "none"
+        document.getElementById("menu-1").style.display = "contents"
     }
 
     document.getElementById("dica").innerHTML = dica
