@@ -1,25 +1,25 @@
-const user = document.getElementById("nick")
-let nome = null
-let nUsuario = JSON.parse(localStorage.getItem('nick'))
+const user = document.getElementById("nick");
+let nome = null;
+let nUsuario = JSON.parse(localStorage.getItem('nick'));
 
 if(nUsuario){
     user.innerHTML = nUsuario
     document.getElementById("log-in").style.display = "none"
     document.getElementById("userInter").style.display = "flex"
-}
+};
 
 // tela/login
 function handlesubmit(event) {
     event.preventDefault()
 
-    document.getElementById('userError').innerHTML = " "
+    document.getElementById('userError').innerHTML = "&nbsp;"
 
     const form = new FormData(event.target)
 
     const nick = form.get('user')
 
     if (!nick) {
-        document.getElementById('userError').innerHTML = " "
+        document.getElementById('userError').innerHTML = "&nbsp;"
         return
     }
     
@@ -48,14 +48,14 @@ function handlesubmit(event) {
     }
 
     if (userfound.password !== password) {
-        document.getElementById('userError').innerHTML = ' '
+        document.getElementById('userError').innerHTML = '&nbsp;'
         document.getElementById('passwordError').innerHTML = 'senha incorreta'
         nome = nick
         return
     }
 
     if (userfound.nick == nick && userfound.password === password) {
-        document.getElementById('passwordError').innerHTML = ' '
+        document.getElementById('passwordError').innerHTML = '&nbsp;'
 
         user.innerHTML = userfound.nick
         nome = userfound.nick
@@ -65,28 +65,41 @@ function handlesubmit(event) {
         localStorage.setItem('nick',JSON.stringify(userfound.nick))
         fecharLogin()
     }
-}    
+};  
 
 function criarlogin(event) {
     event.preventDefault()
     
     const form = new FormData(event.target)
+
+    let users = JSON.parse(localStorage.getItem('users'))
     
     const nick = form.get('user')
     const password = CryptoJS.SHA256(form.get('password')).toString()
     const question = form.get('question')
     const answer = form.get('answer')
-    const score = 0
+    const score = '0'
+    const usb = []
+    const dica = '0'
+
+    for(let user of users) {
+        if(nick == user.nick){
+            document.getElementById('userExist').innerHTML = 'Usuário já cadastrado'
+            return
+        }
+    }
+
+    document.getElementById('userExist').innerHTML = '&nbsp;'
 
     const userObj = {
         nick,
         password,
         question,
         answer,
-        score
+        score,
+        dica,
+        usb
     }
-    
-    let users = JSON.parse(localStorage.getItem('users'))
 
     if(!users) {
         localStorage.setItem('users',JSON.stringify([]))
@@ -98,7 +111,7 @@ function criarlogin(event) {
     localStorage.setItem('users',JSON.stringify(users))
     
     fecharLogin()  
-}
+};
 
 function Recovery(event) {
     event.preventDefault()
@@ -123,11 +136,11 @@ function Recovery(event) {
         error.innerHTML = 'Resposta incorreta'
         return
     } else {
-        error.innerHTML = ' '
+        error.innerHTML = '&nbsp;'
         document.getElementById('newPassword').style.display = 'contents'
         document.getElementById('recovery-password').style.display = 'none'
     }
-}
+};
 
 function changePassword(event) {
     event.preventDefault()
@@ -149,13 +162,13 @@ function changePassword(event) {
     userfound.password = password
     localStorage.setItem('users',JSON.stringify(users))
     fecharLogin()
-}
+};
 
 // buttons
 function abrirLogin() {
     document.getElementById("fazerLogin").style.display = 'contents'
     document.getElementById('login').showModal()
-}
+};
 
 function abrirRecovery() {
     if(!nome){
@@ -180,17 +193,17 @@ function abrirRecovery() {
 
     document.getElementById("fazerLogin").style.display = 'none'
     document.getElementById("recovery-password").style.display = 'contents'
-}
+};
 
 function abrirCriarConta() {
     document.getElementById("fazerLogin").style.display = 'none'
     document.getElementById("criarConta").style.display = 'contents'
-}
+};
 
 function recuperar() {
     document.getElementById("fazerLogin").style.display = 'contents' 
-    document.getElementById("recuperar").style.display = ''
-}
+    document.getElementById("recuperar").style.display = '&nbsp;'
+};
 
 function fecharLogin() {
     document.getElementById('login').close()
@@ -199,14 +212,14 @@ function fecharLogin() {
     document.getElementById("recovery-password").style.display = 'none' 
     document.getElementById('newPassword').style.display = 'none'
     document.getElementById('verification').style.display = 'none'
-    nome = ""
-}
+    nome = "&nbsp;"
+};
 
 function logout() {
     localStorage.removeItem('nick')
     document.getElementById("log-in").style.display = "flex"
     document.getElementById("userInter").style.display = "none"
-}
+};
 
 function verification(V) {
     if(V == 'sim'){
@@ -214,7 +227,7 @@ function verification(V) {
     } else {
         fecharLogin()
     }
-}
+};
 
 function openA(){
     const nick =  JSON.parse(localStorage.getItem('nick'))
@@ -224,4 +237,4 @@ function openA(){
     }
     document.getElementById("verification").style.display = 'flex'
     document.getElementById('login').showModal()
-}
+};

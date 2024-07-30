@@ -1,1006 +1,1004 @@
 const palavras = [
     {
-        palavra: "Amendoim",
+        nome: "Amendoim",
         categoria: "Comida",
         dica1: "Possui Casca",
         dica2: "Fornece outras comidas",
         dica3: "Paçoca"
     },
     {
-        palavra: "Arroz",
+        nome: "Arroz",
         categoria: "Comida",
         dica1: "Branco",
         dica2: "Grão",
         dica3: "Alomoço"
     },
     {
-        palavra: "Amora",
+        nome: "Amora",
         categoria: "Comida",
         dica1: "Cor Preta",
         dica2: "Antioxidante",
         dica3: "Cacho",
     },
     {
-        palavra: "Abacaxi",
+        nome: "Abacaxi",
         categoria: "Comida",
         dica1: "Possui cor amarela",
         dica2: "Coroa",
         dica3: "Possui Casca"
     },
     {
-        palavra: "Banana",
+        nome: "Banana",
         categoria: "Comida",
         dica1: "Fruta",
         dica2: "Possui cor amarela",
         dica3: "Cacho"
     },
     {
-        palavra: "Brigadeiro",
+        nome: "Brigadeiro",
         categoria: "Comida",
         dica1: "Doce",
         dica2: "Chocolate",
         dica3: "Confete"
     },
     {
-        palavra: "Bolacha",
+        nome: "Bolacha",
         categoria: "Comida",
         dica1: "Salgada e Doce",
         dica2: "Café ou lanche",
         dica3: "Biscoito ou..."
     },
     {
-        palavra: "Beringela",
+        nome: "Beringela",
         categoria: "Comida",
         dica1: "Cor roxa",
         dica2: "Prima do Pimentão",
         dica3: "Formato suspeito"
     },
     {
-        palavra : "Camarão",
-        categoria : "Comida",
+        nome: "Camarão",
+        categoria: "Comida",
         dica1: "Cor Laranja",
         dica2: "Do mar",
         dica3: "Crustáceo"
     },
     {
-        palavra: "Coxinha",
+        nome: "Coxinha",
         categoria: "Comida",
         dica1: "Salgado",
         dica2: "Grande ou pequena",
         dica3: "100% brasileira"
     },
     {
-        palavra: "Charque",
+        nome: "Charque",
         categoria: "Comida",
         dica1: "Carne",
         dica2: "Salgada",
         dica3: "Dessecada"
     },
     {
-        palavra: "Cuscuz",
+        nome: "Cuscuz",
         categoria: "Comida",
         dica1: "Derivado do milho",
         dica2: "Nordestina",
         dica3: "Flocão"
     },
     {
-        origin: "Cachorro quente",
-        palavra: "Cachorro quente",
+        nome: "Cachorro quente",
         categoria: "Comida",
         dica1: "Salsicha",
         dica2: "Molho",
         dica3: "Vai querer completo?"
     },
     {
-        palavra: "Chocolate",
+        nome: "Chocolate",
         categoria: "Comida",
         dica1: "Doce",
         dica2: "Branco e preto",
         dica3: "bombom, barra..."
     },
     {
-        palavra : "Damasco",
-        categoria : "Comida",
+        nome: "Damasco",
+        categoria: "Comida",
         dica1: "Fruta",
         dica2: "Cor laranja",
         dica3: "Um caroço"
     },
     {
-        palavra: "Dobradinha",
+        nome: "Dobradinha",
         categoria: "Comida",
         dica1: "Feijão branco",
         dica2: "Apimentada",
         dica3: "Festa Junína"
     },
     {
-        palavra: "Donuts",
+        nome: "Donuts",
         categoria: "Comida",
         dica1: "Redondo",
         dica2: "Sobremesa",
         dica3: "Americana"
     },
     {
-        palavra : "Empada",
-        categoria : "Comida",
+        nome: "Empada",
+        categoria: "Comida",
         dica1: "Doce ou Salgada",
         dica2: "Torta pequena",
         dica3: "Crocante"
     },
     {
-        palavra: "Enroladinho",
+        nome: "Enroladinho",
         categoria: "Comida",
         dica1: "Salgado",
         dica2: "Feiras",
         dica3: "Salsicha"
     },
     {
-        palavra: "Empadão",
+        nome: "Empadão",
         categoria: "Comida",
         dica1: "Recheios variados",
         dica2: "Frango",
         dica3: "Empada grande"
     },
     {
-        palavra: "Espaguete",
+        nome: "Espaguete",
         categoria: "Comida",
         dica1: "Massa",
         dica2: "Almôndegas",
         dica3: "Garfo"
     },
     {
-        palavra: "Ervilha",
+        nome: "Ervilha",
         categoria: "Comida",
         dica1: "Cor verde",
         dica2: "A princesa e a...",
         dica3: "Milho e..."
     },
     {
-        palavra : "Framboesa",
-        categoria : "Comida",
+        nome: "Framboesa",
+        categoria: "Comida",
         dica1: "Cor vermelha",
         dica2: "Cacho",
         dica3: "Xarope, geleia..."
     },
     {
-        palavra: "Feijão",
+        nome: "Feijão",
         categoria: "Comida",
         dica1: "Almoço",
         dica2: "Ferro e cálcio",
         dica3: "Preto, branco, verde..."
     },
     {
-        palavra: "Frango",
+        nome: "Frango",
         categoria: "Comida",
         dica1: "Carne",
         dica2: "Recheio",
         dica3: "Assado, cozido"
     },
     {
-        palavra: "Figado",
+        nome: "Figado",
         categoria: "Comida",
         dica1:"Carne",
         dica2:"Mole",
         dica3:"Também é um órgão"
     },
     {
-        palavra: "Fricassé",
+        nome: "Fricassé",
         categoria: "Comida",
         dica1:"Receita com frango",
         dica2:"Molho branco",
         dica3:"Batata palha"
     },
     {
-        palavra : "Gelatina",
-        categoria : "Comida",
+        nome: "Gelatina",
+        categoria: "Comida",
         dica1:"Frio",
         dica2:"Sobremesa",
         dica3:"Diversos sabores"
     },
     {
-        palavra: "Galeto",
+        nome: "Galeto",
         categoria: "Comida",
         dica1:"Natal",
         dica2:"Assado na Brasa",
         dica3:"Deriva do galo"
     },
     {
-        palavra: "Guacamole",
+        nome: "Guacamole",
         categoria: "Comida",
         dica1:"Cor verde",
         dica2:"Molho",
         dica3:"Purê de abacate"
     },
     {
-        palavra: "Goiabada",
+        nome: "Goiabada",
         categoria: "Comida",
         dica1:"Doce",
         dica2:"Fruta",
         dica3:"Romeu e Julieta"
     },
     {
-        palavra: "Guisado",
+        nome: "Guisado",
         categoria: "Comida",
         dica1:"Ensopado",
         dica2:"Preparado em panela",
         dica3:"Carne e gordura"
     },
     {
-        palavra : "Hambúrguer",
-        categoria : "Comida",
+        nome: "Hambúrguer",
+        categoria: "Comida",
         dica1:"Fast Food",
         dica2:"Pão",
         dica3:"Queijo, cebola..."
     },
     {
-        palavra : "Iogurte",
-        categoria : "Comida",
+        nome: "Iogurte",
+        categoria: "Comida",
         dica1:"Rosa ou branco",
         dica2:"Doce",
         dica3:"Laticínios"
     },
     {
-        palavra: "Jerimum",
+        nome: "Jerimum",
         categoria: "Comida",
         dica1:"Fruta",
         dica2:"Tem sementes pretas",
         dica3:"Laranja"
     },
     {
-        palavra: "Jabuticaba",
+        nome: "Jabuticaba",
         categoria: "Comida",
         dica1:"Fruta",
         dica2:"Faz bem pro coração",
         dica3:"Cor roxa"
     },
     {
-        palavra: "Jenipapo",
+        nome: "Jenipapo",
         categoria: "Comida",
         dica1:"Fruta",
         dica2:"Cor amarelo-pardeado",
         dica3:"Ácida"
     },
     {
-        palavra: "Linguiça",
+        nome: "Linguiça",
         categoria: "Comida",
         dica1:"Carne de porco",
         dica2:"Comida roliça",
         dica3:"Fina, grossa ou comprida"
     },
     {
-        palavra: "Lasanha",
+        nome: "Lasanha",
         categoria: "Comida",
         dica1:"De carne, ou frango",
         dica2:"Massa, ou massa pronta",
         dica3:"Alomoço"
     },
     {
-        palavra: "Lagosta",
+        nome: "Lagosta",
         categoria: "Comida",
         dica1:"Crustáceo",
         dica2:"Possui garras",
         dica3:"Cor vermelha"
     },
     {
-        palavra: "Melancia",
+        nome: "Melancia",
         categoria: "Comida",
         dica1:"Fruta",
         dica2:"Aquosa",
         dica3:"Cor verde e vermelha"
     },
     {
-        palavra: "Mandioca",
+        nome: "Mandioca",
         categoria: "Comida",
         dica1:"Raíz",
         dica2:"Interior branco",
         dica3:"Também conhecida como macaxeira"
     },
     {
-        palavra: "Milho",
+        nome: "Milho",
         categoria: "Comida",
         dica1:"Festa junina",
         dica2:"Receitas variadas",
         dica3:"Possui sabugo"
     },
     {
-        palavra: "Mousse",
+        nome: "Mousse",
         categoria: "Comida",
         dica1:"Sobremesa",
         dica2:"Fria",
         dica3:"Sabores variados"
     },
     {
-        palavra : "Nuggets",
-        categoria : "Comida",
+        nome: "Nuggets",
+        categoria: "Comida",
         dica1:"Comida congelada",
         dica2:"Fritura",
         dica3:"De frango"
     },
     {
-        palavra: "Nachos",
+        nome: "Nachos",
         categoria: "Comida",
         dica1:"Apimentada",
         dica2:"Crocante",
         dica3:"Formarto triângular"
     },
     {
-        palavra : "Omelete",
-        categoria : "Comida",
+        nome: "Omelete",
+        categoria: "Comida",
         dica1:"Possui verduras",
         dica2:"Café da manhã",
         dica3:"Ovos"
     },
     {
-        palavra: "Orégano",
+        nome: "Orégano",
         categoria: "Comida",
         dica1:"Tempero",
         dica2:"Dá aroma e sabor",
         dica3:"Cor preta e verde"
     },
     {
-        palavra: "Ostra",
+        nome: "Ostra",
         categoria: "Comida",
         dica1:"Molusco",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Palmito",
+        nome: "Palmito",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Pimentão",
+        nome: "Pimentão",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Peixe",
+        nome: "Peixe",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra : "Queijo",
+        nome: "Queijo",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Quibe",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Quiabo",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome : "Risoto",
         categoria : "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Quibe",
+        nome: "Rabanete",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Quiabo",
+        nome: "Ravioli",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra : "Risoto",
+        nome: "Salgadinho",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Sushi",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Salsicha",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Salada",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Tapioca",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Torta",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Trufa",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome: "Vatapá",
+        categoria: "Comida",
+        dica1:"",
+        dica2:"",
+        dica3:""
+    },
+    {
+        nome : "Vinho",
         categoria : "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Rabanete",
+        nome: "Vagem",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Ravioli",
+        nome: "Xerém",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra : "Salgadinho",
-        categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Sushi",
+        nome: "Yakisoba",
         categoria: "Comida",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Salsicha",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Salada",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra : "Tapioca",
-        categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Torta",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Trufa",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Vatapá",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra : "Vinho",
-        categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Vagem",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra : "Xerém",
-        categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Yakisoba",
-        categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        palavra: "Alicate",
+        nome: "Alicate",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Aparelho",
+        nome: "Aparelho",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Almofada",
+        nome: "Almofada",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Bracelete",
+        nome: "Bracelete",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Bacia",
+        nome: "Bacia",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Brinco",
+        nome: "Brinco",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Balde",
+        nome: "Balde",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Carta",
+        nome: "Carta",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Cadeira",
+        nome: "Cadeira",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Computador",
+        nome: "Computador",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Caneta",
+        nome: "Caneta",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Disco",
+        nome: "Disco",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Despertador",
+        nome: "Despertador",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Dicionário",
+        nome: "Dicionário",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Dentadura",
+        nome: "Dentadura",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Escada",
+        nome: "Escada",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Escova",
+        nome: "Escova",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Espelho",
+        nome: "Espelho",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Esmalte",
+        nome: "Esmalte",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Envelope",
+        nome: "Envelope",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Frasco",
+        nome: "Frasco",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Fivela",
+        nome: "Fivela",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Frigideira",
+        nome: "Frigideira",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Garfo",
+        nome: "Garfo",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        origin: "Guarda chuva",
-        palavra: "Guarda chuva",
+        nome: "Guarda chuva",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Guitarra",
+        nome: "Guitarra",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Grampeador",
+        nome: "Grampeador",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Gaiola",
+        nome: "Gaiola",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Hidrante",
+        nome: "Hidrante",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Haste",
+        nome: "Haste",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Impressora",
+        nome: "Impressora",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Janela",
+        nome: "Janela",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Jornal",
+        nome: "Jornal",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Jaqueta",
+        nome: "Jaqueta",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Jarra",
+        nome: "Jarra",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Kimono",
+        nome: "Kimono",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Lâmpada",
+        nome: "Lâmpada",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Lápis",
+        nome: "Lápis",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Livro",
+        nome: "Livro",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Lixeira",
+        nome: "Lixeira",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Máscara",
+        nome: "Máscara",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Martelo",
+        nome: "Martelo",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Mochila",
+        nome: "Mochila",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Mouse",
+        nome: "Mouse",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Monitor",
+        nome: "Monitor",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Notebook",
+        nome: "Notebook",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Navio",
+        nome: "Navio",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Óculos",
+        nome: "Óculos",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Odontoscópio",
+        nome: "Odontoscópio",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Orelhão",
+        nome: "Orelhão",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Ombreira",
+        nome: "Ombreira",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Prato",
+        nome: "Prato",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Panela",
+        nome: "Panela",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Pincel",
+        nome: "Pincel",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Porta",
+        nome: "Porta",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Quadro",
+        nome: "Quadro",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Quadriciclo",
+        nome: "Quadriciclo",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Relógio",
+        nome: "Relógio",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Raquete",
+        nome: "Raquete",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Régua",
+        nome: "Régua",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Roteador",
+        nome: "Roteador",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Sapato",
+        nome: "Sapato",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Serra",
+        nome: "Serra",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Sapatilha",
+        nome: "Sapatilha",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Saxofone",
+        nome: "Saxofone",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Smartwatch",
+        nome: "Smartwatch",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Telefone",
+        nome: "Telefone",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Televisão",
+        nome: "Televisão",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Tênis",
+        nome: "Tênis",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Toalha",
+        nome: "Toalha",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Tesoura",
+        nome: "Tesoura",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Uniforme",
+        nome: "Uniforme",
         categoria: "Objeto",
     },
     {
-        palavra: "Ukulele",
+        nome: "Ukulele",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
         dica3:""
     },
     {
-        palavra: "Umidificador",
+        nome: "Umidificador",
         categoria: "Objeto",
         dica1:"",
         dica2:"",
@@ -1027,13 +1025,6 @@ const palavras = [
         dica1:"raiz",
         dica2:"branco",
         dica3:"nordestina"
-    },
-    {
-        nome: "Barba Ruiva",
-        categoria: "folclore",
-        dica1:"rio",
-        dica2:"laranja",
-        dica3:"homem"
     },
     {
         nome: "Tacape",
@@ -1085,7 +1076,6 @@ const palavras = [
         dica3:""
     },
     {
-        origin: "Zigue-Zague",
         nome: "Zigue-Zague",
         categoria: "linha ou série de linhas quebradas fazem...",
         dica1:"",
@@ -1100,7 +1090,6 @@ const palavras = [
         dica3:""
     },
     {
-        origin: "Helena Ignez",
         nome: "Helena Ignez",
         categoria: "Atriz Brasileira",
         dica1:"",

@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="./css/ranking.css">
 </head>
 <body onclick="sair()">
-    <div class="ranking">
+    <div>
+        <h1 class="title">Ranking</h1>
+    </div>
+    <div class="ranking" id="Ranking">
         <div class="position">
             <div class="hashe">
                 <h3>#</h3>
@@ -21,26 +24,8 @@
         </div>
     </div>
 
-    <script> 
-        const rank = document.getElementsByClassName('ranking')
-        const users = JSON.parse(localStorage.getItem('users'))
-
-        let maior = 0
-        let vMaior = []
-
-        for(let user of users ) {
-            if(user.score > maior) {
-                maior = user.score
-            }
-        }
+    <script src="./javascript/ranking.js">
         
-        
-        console.log(Math.max(users))
-        
-
-        function sair() {
-            window.location.replace("./index.html");
-        }
     </script>
     
 </body>

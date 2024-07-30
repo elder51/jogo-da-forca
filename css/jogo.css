@@ -63,7 +63,7 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: "Noto Serif", serif;
-    font-size: 40px;
+    font-size: 37px;
     border: 3px solid;
     border-radius: 15px;
 }
@@ -88,7 +88,7 @@ body {
 .buttonM {
     align-items: center;
     font-family: "Noto Serif", serif;
-    font-size: 45px;
+    font-size: 37px;
     color: white;
     border: transparent;
     background-color: transparent;

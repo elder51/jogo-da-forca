@@ -1,4 +1,3 @@
-const palavraSecreta = document.getElementsByClassName("palavra-secreta");
 const palavraCategoria = document.getElementById("categoria");
 const dinamica = document.getElementsByClassName("letras");
 const tecla = document.getElementsByClassName("tecla");
@@ -12,22 +11,32 @@ let dica = 5;
 let chances = 3;
 let delay = 0;
 
+const users = JSON.parse(localStorage.getItem('users'));
+const nick = JSON.parse(localStorage.getItem('nick'));
+
+if (nick) {
+    for (let user of users) {
+        if (nick == user.nick) {
+            score = user.score
+            if (user.usb) { USB = user.usb }
+            if (user.dica) { dica = user.dica }
+            break
+        }
+    }
+};
+
 document.getElementById("score").innerHTML = score;
 document.getElementById("dica").innerHTML = dica;
 document.getElementById("chances").innerHTML = chances;
 
 const frasePalavraCorreta = [
-    ["Palavra correta! Continue assim!!","Procurando nova palavra no dicionario...","Palavra encontrada!!"],
-    ["Você acertou! Parabéns!","Aguarde um momento...","Você conseguiu!!"]
+    ["Palavra correta! Continue assim!!", "Procurando nova palavra no dicionario...", "Palavra encontrada!!"],
+    ["Você acertou! Parabéns!", "Aguarde um momento...", "Você conseguiu!!"]
 ];
 
 const frasePalavraErrada = [
-    ["Palavra incorreta!","Aguarde enquanto procuramos uma nova palavra...","Montando nova palavra!!"],
-    ["Errado! Tente novamente!","Buscando nova palavra...","Não desista! Nova palavra chegando..."]
-];
-
-const fraseReprovado = [
-    ["Reprovado!!!","Tente novamente mais tarde!"]
+    ["Palavra incorreta!", "Aguarde enquanto procuramos uma nova palavra...", "Montando nova palavra!!"],
+    ["Errado! Tente novamente!", "Buscando nova palavra...", "Não desista! Nova palavra chegando..."]
 ];
 
 const palavras = [
@@ -53,12 +62,18 @@ const palavras = [
         dica3: 'Pode girar a cabeça em ate 270º'
     },
     {
-        origin: "Micro-ondas",
         nome: "Micro-ondas",
         categoria: "objeto",
         dica1: 'Tem tempo',
         dica2: 'Gera calor',
         dica3: 'Tem na cozinha'
+    },
+    {
+        nome: "Cachorro quente",
+        categoria: "Comida",
+        dica1: "Salsicha",
+        dica2: "Molho",
+        dica3: "Vai querer completo?"
     }
 ];
 
@@ -69,21 +84,21 @@ function reiniciar() {
         score = 0
         dica = 5
         chances = 3
-        erros = 0
         document.getElementById("score").innerHTML = score;
         document.getElementById("dica").innerHTML = dica;
         document.getElementById("chances").innerHTML = chances;
         USB = []
         restaurar()
         verificarSort()
+        if(nick) {scoreload()}
     }, 1000)
 };
 
 
 function continuar() {
     setTimeout(() => {
-        if(dica <= 3) {
-            chances = dica  
+        if (dica <= 3) {
+            chances = dica
         } else {
             chances = 3
         }
@@ -96,60 +111,76 @@ function continuar() {
 
 // Interface jogo
 
+let nome = ""
+let nomesecreto = nome.normalize('NFD').replace(/[^a-zA-Z\s-]/g,'');
 
 function sort(V) {
     const indice = Math.floor(Math.random() * V.length)
-    
+
     return indice
 };
 
 verificarSort()
 function verificarSort() {
     const indice = sort(palavras)
-    
+
     if (USB.includes(indice)) {
         verificarSort()
     } else {
         USB.push(indice)
         palavraSort = palavras[indice]
-
-        palavraSecreta[0].innerHTML = ""
-        palavraSecreta[1].innerHTML = ""
+        document.getElementById('visor').innerHTML = ''
         montarTela()
     }
 };
 
 function montarTela() {
-    let el = 0;
-    for (let i = 0; i < palavraSort.nome.length; i++) {
-        if (palavraSort.nome[i] == ' ') {
-            el++
-            palavraSort.nome = palavraSort.nome.replace(' ', '')
-            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras'>" + " " + "</div>"
-        } else if(palavraSort.nome[i] == '-') {
-            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras' style='border: transparent;'>" + "-" + "</div>"
-        } else {
-            palavraSecreta[el].innerHTML = palavraSecreta[el].innerHTML + "<div class='letras'>" + " " + "</div>"
+    nome = ''
+    p = palavraSort.nome.split(" ") 
+
+    for (const n of p) {
+
+        const palavraSecreta = document.createElement('ps')
+        palavraSecreta.className = 'palavra-secreta'
+        document.getElementById('visor').appendChild(palavraSecreta)
+
+        for (const i of n) {
+
+            const letra = document.createElement('letra')
+            letra.className = 'letras'
+            palavraSecreta.appendChild(letra)
+
+            if (i == '-') {
+                letra.innerHTML = i
+                letra.style.border = 'transparent'
+            }
         }
+
     }
     palavraCategoria.innerHTML = palavraSort.categoria
+
+    for (const n of p) {
+        nome = nome + n
+        
+    }
+    
+    nomesecreto = nome.normalize('NFD').replace(/[^a-zA-Z\s-]/g,'')
 };
 
 // teclas/letras/
 
 let tabelaL = [];
 let L = 0;
-let erros = 0;
-let h = 0
-let d = 1
+let h = 0;
+let d = 1;
 
 function verificar(letra) {
-
     tabelaL.push(letra)
-    if (palavraSort.nome.toUpperCase().includes(letra)) {
-        for (let i = 0; i < palavraSort.nome.length; i++) {
-            if (palavraSort.nome.toUpperCase()[i] == letra) {
-                dinamica[i].innerHTML = palavraSort.nome[i]
+
+    if (nomesecreto.toUpperCase().includes(letra)) {
+        for (let i = 0; i < nome.length; i++) {
+            if (nomesecreto.toUpperCase()[i] == letra) {
+                dinamica[i].innerHTML = nome[i]
                 L++
             }
             trocarStyle("tecla-" + letra, letra)
@@ -160,21 +191,17 @@ function verificar(letra) {
         trocarImg(tentativas)
 
         if (tentativas >= 6) {
-            erros++
             modal('errou')
         }
     }
 
-    if (palavraSort.nome.toUpperCase().includes("-")) {
+    if (nome.toUpperCase().includes("-")) {
         h = 1
     }
 
-    if (L == palavraSort.nome.length-h) {
-        if (USB.length == palavras.length && erros == 0) {
+    if (L == nome.length - h) {
+        if (USB.length == palavras.length) {
             modal('certificado')
-
-        } else if (USB.length == palavras.length && erros > 0) {
-            modal('falhou')
 
         } else {
             trocarImg(tentativas)
@@ -188,9 +215,9 @@ function trocarStyle(id, letra) {
     document.getElementById(id).style.cursor = "not-allowed"
     document.getElementById(id).disabled = true
 
-    if (palavraSort.nome.toUpperCase().includes(letra)) {
+    if (nomesecreto.toUpperCase().includes(letra)) {
         document.getElementById(id).style.color = "greenYellow"
-        
+
     } else {
         document.getElementById(id).style.color = "red"
     }
@@ -243,10 +270,14 @@ function restaurar() {
 
     trocarImg(tentativas)
 
+    document.getElementById('dica1').innerHTML = ''
+    document.getElementById('dica2').innerHTML = ''
+    document.getElementById('dica3').innerHTML = ''
+
     document.getElementById("visorDialogo").style.display = "none"
     document.getElementById("visor").style.display = "table-column"
 
-    if(dica > 0) {
+    if (dica > 0) {
         document.getElementById('Pedirdica').disabled = false
         document.getElementById('Pedirdica').style.color = "white"
         document.getElementById('Pedirdica').style.cursor = "pointer"
@@ -261,24 +292,21 @@ function restaurar() {
     }
 
     tabelaL = []
-
-    if(palavraSort.origin) {
-        palavraSort.nome = palavraSort.origin
-        return
-    }
 };
 
 let cUsadas = 40;
 function modal(V) {
 
     if (V == 'certificado') {
-        dialog.showModal()
-        scoreload()
+        score = score + lErradas + cUsadas
+        dialog.showModal() 
         setTimeout(() => {
-            window.location.replace("./index.html");
+            scoreload()
         }, 10000)
 
-    } else if (V == 'acertou') {
+    }
+
+    if (V == 'acertou') {
         setTimeout(() => {
             score = score + lErradas + cUsadas
             if (tentativas == 0) {
@@ -287,41 +315,38 @@ function modal(V) {
             colocarFrase(frasePalavraCorreta)
         }, 1000)
 
-    } else if (V == 'errou') {
+    }
+
+    if (V == 'errou') {
         setTimeout(() => {
             score = (score - (score / 10))
 
             colocarFrase(frasePalavraErrada)
         }, 1000)
-        
 
-    } else {
-        setTimeout(() => {
-            colocarFrase(fraseReprovado)
-        }, 1000)
 
     }
 };
 
 function dicas(V) {
-    if(V == "pedir") {
+    if (V == "pedir") {
         document.getElementById("menu-1").style.display = "none"
         document.getElementById("menu-2").style.display = "contents"
         setTimeout(() => {
             document.getElementById("menu-2").style.display = "none"
             document.getElementById("menu-1").style.display = "contents"
-        },5000)
+        }, 5000)
     }
 
     if (V == "voltar") {
         document.getElementById("menu-2").style.display = "none"
         document.getElementById("menu-1").style.display = "contents"
     }
-    
-    
-    if(V == "letra") {
+
+
+    if (V == "letra") {
         const indice = sort(palavraSort.nome)
-        if(tabelaL.includes(palavraSort.nome[indice].toUpperCase())) {
+        if (tabelaL.includes(palavraSort.nome[indice].toUpperCase())) {
             dicas('letra')
         } else {
             dica--
@@ -374,7 +399,7 @@ function dicas(V) {
         case 2:
             cUsadas = 35
             break;
-    
+
         default:
             cUsadas = 40
             break;
@@ -395,48 +420,40 @@ function colocarFrase(arrayDeFrases) {
     document.getElementById("score").innerHTML = score
 
     proximaFrase(frase)
-    function proximaFrase(frase){
-        
-        setTimeout(()=>{
+    function proximaFrase(frase) {
+
+        setTimeout(() => {
             if (delay >= frase.length - 1) {
-                if (frase.length == 2) {
-                    window.location.replace("./index.html")
-
-                } else {
-                    document.getElementById("menu-2").style.display = "none"
-                    document.getElementById("menu-1").style.display = "contents"
-                    continuar()
-
-                }
+                document.getElementById("menu-2").style.display = "none"
+                document.getElementById("menu-1").style.display = "contents"
+                continuar()
 
             } else {
                 delay++
                 document.getElementById('frase').innerHTML = frase[delay]
                 proximaFrase(frase)
 
-            } 
-        },2000)
+            }
+        }, 2000)
     }
-}
+};
 
 function scoreload() {
-
-    const score = document.getElementById('score').innerHTML
-
-    const users = JSON.parse(localStorage.getItem('users'))
-    const nick =  JSON.parse(localStorage.getItem('nick'))
-
-    if(nick){
-        for(let user of users) {
-            if(user.nick == nick) {
-                if(score > user.score) {
-                    user.score = score
-                    localStorage.setItem('users',JSON.stringify(users))
-                    break
+    if (nick) {
+        for (let user of users) {
+            if (user.nick == nick) {
+                user.score = score
+                user.dica = dica
+                if(USB == palavras) {
+                    user.usb == []
+                } else {
+                    USB.pop()
+                    user.usb = USB
                 }
+                localStorage.setItem('users', JSON.stringify(users))
+                break
             }
         }
     }
-    
     window.location.replace("./index.html");
-}
+};
