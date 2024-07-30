@@ -5,14 +5,16 @@ let score = []
 let dados = []
 let p = 0
 
-for (let user of users) {
-    score.push(user.score)
-    dados.push([user.nick, user.score])
+if(users){
+    for (let user of users) {
+        score.push(user.score)
+        dados.push([user.nick, user.score])
+    }
+    ordenar()
 }
 
 let position = []
 
-ordenar()
 function ordenar() {
     let max = score.reduce(function (a, b) { return Math.max(a, b) })
 
