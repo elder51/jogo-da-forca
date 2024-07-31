@@ -227,32 +227,32 @@ function trocarImg(tentativas) {
     if (tentativas <= 6) {
         switch (tentativas) {
             case 1:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-1.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-1.webp)";
                 lErradas = 50
                 break;
             case 2:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-2.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-2.webp)";
                 lErradas = 40
                 break;
             case 3:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-3.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-3.webp)";
                 lErradas = 30
                 break;
             case 4:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-4.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-4.webp)";
                 lErradas = 20
                 break;
             case 5:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-5.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-5.webp)";
                 lErradas = 10
                 break;
             case 6:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-6.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-6.webp)";
                 lErradas = 0
                 break;
 
             default:
-                document.getElementById("image").style.backgroundImage = "url(./img/forca-0.png)";
+                document.getElementById("image").style.backgroundImage = "url(./img/forca-0.webp)";
                 lErradas = 60
                 break;
         }

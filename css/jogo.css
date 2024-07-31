@@ -30,7 +30,7 @@ body {
 .displayImg {
     height: 292px;
     width: 340px;
-    background-image: url(../img/forca-0.png);
+    background-image: url(../img/forca-0.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -125,7 +125,7 @@ body {
     border: transparent;
     height: 90%;
     width: 68%;
-    background-image: url(../img/certificado.png);
+    background-image: url(../img/certificado.webp);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
