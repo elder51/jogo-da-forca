@@ -6,20 +6,21 @@ if(nUsuario){
     user.innerHTML = nUsuario
     document.getElementById("log-in").style.display = "none"
     document.getElementById("userInter").style.display = "flex"
+    document.getElementById('log-out').style.display = 'block'
 };
 
 // tela/login
 function handlesubmit(event) {
     event.preventDefault()
 
-    document.getElementById('userError').innerHTML = "&nbsp;"
+    document.getElementById('userError').innerHTML = ""
 
     const form = new FormData(event.target)
 
     const nick = form.get('user')
 
     if (!nick) {
-        document.getElementById('userError').innerHTML = "&nbsp;"
+        document.getElementById('userError').innerHTML = ""
         return
     }
     
@@ -48,19 +49,20 @@ function handlesubmit(event) {
     }
 
     if (userfound.password !== password) {
-        document.getElementById('userError').innerHTML = '&nbsp;'
+        document.getElementById('userError').innerHTML = ''
         document.getElementById('passwordError').innerHTML = 'senha incorreta'
         nome = nick
         return
     }
 
     if (userfound.nick == nick && userfound.password === password) {
-        document.getElementById('passwordError').innerHTML = '&nbsp;'
+        document.getElementById('passwordError').innerHTML = ''
 
         user.innerHTML = userfound.nick
         nome = userfound.nick
         document.getElementById("log-in").style.display = "none"
         document.getElementById("userInter").style.display = "flex"
+        document.getElementById('log-out').style.display = 'block'
 
         localStorage.setItem('nick',JSON.stringify(userfound.nick))
         fecharLogin()
@@ -77,19 +79,21 @@ function criarlogin(event) {
     const nick = form.get('user')
     const password = CryptoJS.SHA256(form.get('password')).toString()
     const question = form.get('question')
-    const answer = form.get('answer')
+    const answer = CryptoJS.SHA256(form.get('answer')).toString()
     const score = '0'
     const usb = []
     const dica = '0'
 
-    for(let user of users) {
-        if(nick == user.nick){
-            document.getElementById('userExist').innerHTML = 'Usuário já cadastrado'
-            return
+    if(users) {
+        for(let user of users) {
+            if(nick == user.nick){
+                document.getElementById('userExist').innerHTML = 'Usuário já cadastrado'
+                return
+            }
         }
     }
 
-    document.getElementById('userExist').innerHTML = '&nbsp;'
+    document.getElementById('userExist').innerHTML = ''
 
     const userObj = {
         nick,
@@ -121,7 +125,7 @@ function Recovery(event) {
     const error = document.getElementById('error')
 
     const users =   JSON.parse(localStorage.getItem('users'))
-    const answer = form.get('resposta')
+    const answer = CryptoJS.SHA256(form.get('resposta')).toString()
 
     let userfound = null
 
@@ -219,6 +223,7 @@ function logout() {
     localStorage.removeItem('nick')
     document.getElementById("log-in").style.display = "flex"
     document.getElementById("userInter").style.display = "none"
+    document.getElementById('log-out').style.display = 'none'
 };
 
 function verification(V) {

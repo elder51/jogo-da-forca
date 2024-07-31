@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Da forca</title>
+    <link rel="shortcut icon" href="./img/fav-icon.png" type="image/x-icon">
+    <title>Menu - Jogo Da Forca</title>
 
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/login-register.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    
+
 </head>
+
 <body>
     <div class="container">
         <div class="titulo">
@@ -16,40 +20,43 @@
         </div>
 
         <div class="quadro">
-            <div>
-                <div class="left">
-                    <div id="log-in" >
-                        <button class="font" onclick="abrirLogin()">login</button>
-                    </div>
+            <div class="left">
+                <div id="log-in">
+                    <button class="font" onclick="abrirLogin()">login</button>
+                </div>
 
-                    <div id="userInter" class="font2" style="display: none;">
+                <div id="userInter" style="display: none;">
+                    <div class="font2">
                         <p>Usuário:&nbsp;</p>
                         <p id="nick"></p>
-                        <p>&nbsp;&nbsp;&nbsp;</p>
-
-                        <div>
-                            <button class="font" onclick="logout()">logout</button>
-                        </div>
                     </div>
-                </div>
-
-                <div class="center">
-                    <div>
-                        <button class="button" onclick="openA()">Jogar</button>
-                    </div>
-            
-                    <div>
-                        <a href="./sobre.html"><button class="button">Sobre</button></a>
-                    </div> 
-                </div>
-        
-                
-        
-                <div class="right">
-                    <a href="./ranking.html"><button class="font">Ranking</button></a>
-                    
                 </div>
             </div>
+
+            <div class="center">
+                <div>
+                    <button class="button" onclick="openA()">Jogar</button>
+                </div>
+
+                <div>
+                    <a href="./sobre.html"><button class="button">Sobre</button></a>
+                </div>
+            </div>
+
+
+
+            <div class="right">
+                <div class="top">
+                    <div style="display: none;" id="log-out">
+                        <button class="font" onclick="logout()">logout</button>
+                    </div>
+                </div>
+
+                <div class="botton">
+                    <a href="./ranking.html"><button class="font">Ranking</button></a>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -64,25 +71,25 @@
                 <div>
                     <h1>LOGIN</h1>
                 </div>
-             
-                <span>Usuário</span>
+
                 <div>
+                    <p>Usuário</p>
                     <input type="text" name="user" placeholder="Nome" minlength="3" maxlength="12" required>
-                    <p class="erro" id="userError">&nbsp;</p>
+                    <p class="erro" id="userError"></p>
                 </div>
-            
-                <span>Senha</span>
+
                 <div>
+                    <p>Senha</p>
                     <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
-                    <p class="erro" id="passwordError">&nbsp;</p>
+                    <p class="erro" id="passwordError"></p>
                 </div>
-            
+
                 <div class="redirect">
                     <p cl onclick="abrirRecovery()">esqueci a senha</p>
-            
+
                     <p onclick="abrirCriarConta()">criar conta</p>
                 </div>
-            
+
                 <div>
                     <input class="entrar" type="submit" value="entrar">
                 </div>
@@ -90,40 +97,44 @@
         </div>
 
         <div id="criarConta" style="display: none;">
-            <form  onsubmit="criarlogin(event)" class="login">
+            <form onsubmit="criarlogin(event)" class="crearlogin">
 
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
-                </div> 
+                </div>
 
                 <div>
                     <h1>CADASTRAR</h1>
                 </div>
 
-                Usuário
-                <div>
-                    <input type="text" name="user" placeholder="Nome" minlength="3" maxlength="15" required>
-                    <p class="erro" id="userExist">&nbsp;</p>
-                </div>
-            
-                Senha
-                <div>
-                    <input type="password" name="password" placeholder="Senha" minlength="8" maxlength="16" required>
+                <div style="display: inline-flex;">
+                    Usuário:
+                    <div>
+                        <input type="text" name="user" placeholder="Nome min-3 / max-15" minlength="3" maxlength="15" required>
+                        <p class="erro" id="userExist"></p>
+                    </div>
+                   
+                    &nbsp;&nbsp;Senha:
+                    <div>
+                        <input type="password" name="password" placeholder="Senha min-8 / max-16" minlength="8" maxlength="16" required>
+                    </div>
                 </div>
 
                 <div>
-                    <p class="espaco">PERGUNTA DE RECUPERAÇÃO</p>
+                    <p>PERGUNTA DE RECUPERAÇÃO</p>
                     <p>Defina uma pergunta com a resposta que só você saiba.</p>
                 </div>
 
                 <div>
-                    <input type="text" name="question" placeholder="P - Minha fruta favorita?" maxlength="25" required>
+                    <p>Pergunta:</p>
+                    <input class="question" type="text" name="question" placeholder="P - Minha fruta favorita? max-25" maxlength="25" required>
                 </div>
 
                 <div>
-                    <input type="text" name="answer" placeholder="R - Maçã" maxlength="10" required>
+                    <p>Resposta:&nbsp;</p>
+                    <input class="question" type="text" name="answer" placeholder="R - Maçã max-10" maxlength="10" required>
                 </div>
-    
+
                 <div>
                     <input class="entrar" type="submit" value="Criar">
                 </div>
@@ -131,25 +142,25 @@
         </div>
 
         <div id="recovery-password" style="display: none;">
-            <form  onsubmit="Recovery(event)" class="login">
-        
+            <form onsubmit="Recovery(event)" class="recoveryPass">
+
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
                 </div>
-        
+
                 <div>
                     <h1>ESQUECI A SENHA</h1>
                 </div>
-        
+
                 <div>
                     <p id="pergunta">Minha fruta favorita?</p>
                 </div>
-        
+
                 <div>
-                    <input name="resposta" placeholder="Resposta" type="text" required>
-                    <p class="erro" id="error">&nbsp;</p>
+                    <input class="question" name="resposta" placeholder="Resposta" type="text" required>
+                    <p class="erro" id="error"></p>
                 </div>
-        
+
                 <div>
                     <input class="entrar" type="submit" value="responder">
                 </div>
@@ -157,7 +168,7 @@
         </div>
 
         <div id="newPassword" style="display: none;">
-            <form  onsubmit="changePassword(event)" class="login">
+            <form onsubmit="changePassword(event)" class="recoveryPass">
 
                 <div>
                     <p class="xis" onclick="fecharLogin()">&#10060;</p>
@@ -166,11 +177,11 @@
                 <div>
                     <h1>NOVA SENHA</h1>
                 </div>
-    
+
                 <div>
                     <input type="password" name="password" placeholder="********" minlength="8" maxlength="16">
                 </div>
-    
+
                 <div>
                     <input class="entrar" type="submit" value="trocar senha">
                 </div>
@@ -178,19 +189,13 @@
         </div>
 
         <div id="verification" style="display: none;">
-            <div class="login">
+            <div class="alternativa">
                 <p class="xis" onclick="fecharLogin()">&#10060;</p>
-                <br>
 
                 <h1>Deseja continuar sem efetuar login?</h1>
-                <br>
-                <br>
-                <br>
-        
+
                 <button class="entrar" onclick="verification('sim')">Sim</button>
                 <button class="entrar" onclick="verification('nao')">Não</button>
-        
-        
             </div>
         </div>
     </dialog>
@@ -198,4 +203,5 @@
     <script src="./javascript/login-cadastro.js"></script>
 
 </body>
+
 </html>

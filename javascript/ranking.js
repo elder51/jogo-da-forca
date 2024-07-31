@@ -1,11 +1,17 @@
 const rank = document.getElementsByClassName('ranking')
+const menssage = document.getElementById('menssage')
 const users = JSON.parse(localStorage.getItem('users'))
+const nick = JSON.parse(localStorage.getItem('nick'))
 
 let score = []
 let dados = []
+let place = []
 let p = 0
 
+menssage.innerHTML = 'Ainda não tem niguém aqui, seja o primeiro e faça login!'
+
 if(users){
+    menssage.innerHTML = ''
     for (let user of users) {
         score.push(user.score)
         dados.push([user.nick, user.score])
@@ -13,20 +19,18 @@ if(users){
     ordenar()
 }
 
-let position = []
-
 function ordenar() {
-    let max = score.reduce(function (a, b) { return Math.max(a, b) })
+    let max = score.reduce(function (a, i) { return Math.max(a, i) })
 
     for (let i = 0; i <= score.length; i++) {
         if (score[i] == max) {
-            position.push(dados[i])
+            place.push(dados[i])
             score.splice(i, 1)
             dados.splice(i, 1)
         }
     }
 
-    if (position.length == users.length) {
+    if (place.length == users.length) {
         montar()
         return
     } else {
@@ -35,11 +39,12 @@ function ordenar() {
 }
 
 function montar() {
-    for (let l of position) {
+    for (let l of place) {
         p++
 
         const position = document.createElement('position')
         position.className = 'position'
+        if (nick == l[0]) {position.style.color = 'yellow'}
         document.getElementById('Ranking').appendChild(position)
 
         const positionRanking = document.createElement('pr')

@@ -160,8 +160,7 @@ function montarTela() {
     palavraCategoria.innerHTML = palavraSort.categoria
 
     for (const n of p) {
-        nome = nome + n
-        
+        nome = nome + n   
     }
     
     nomesecreto = nome.normalize('NFD').replace(/[^a-zA-Z\s-]/g,'')
@@ -302,6 +301,7 @@ function modal(V) {
         dialog.showModal() 
         setTimeout(() => {
             scoreload()
+            sair('R')
         }, 10000)
 
     }
@@ -455,5 +455,19 @@ function scoreload() {
             }
         }
     }
-    window.location.replace("./index.html");
+    
 };
+
+function sair(V) {
+    if (nick) {
+        if (V == 'R') {
+            window.location.replace("./ranking.html");
+            return
+        }
+    }
+
+    if (V == 'M') {
+        window.location.replace("./index.html");
+        return
+    }
+}
