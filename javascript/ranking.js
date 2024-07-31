@@ -1,67 +1,36 @@
-const rank = document.getElementsByClassName('ranking')
+const ranking = document.querySelector('table')
 const menssage = document.getElementById('menssage')
-const users = JSON.parse(localStorage.getItem('users'))
+const users = JSON.parse(localStorage.getItem('users')) ?? []
 const nick = JSON.parse(localStorage.getItem('nick'))
 
-let score = []
-let dados = []
-let place = []
-let p = 0
+users.sort((a, b) => b.score - a.score)
 
-menssage.innerHTML = 'Ainda não tem niguém aqui, seja o primeiro e faça login!'
+let ultimaPosicao = 0
 
-if(users){
-    menssage.innerHTML = ''
-    for (let user of users) {
-        score.push(user.score)
-        dados.push([user.nick, user.score])
-    }
-    ordenar()
-}
+for (let i = 0; i < users.length; i++) {
+    const linha = document.createElement('tr')
 
-function ordenar() {
-    let max = score.reduce(function (a, i) { return Math.max(a, i) })
-
-    for (let i = 0; i <= score.length; i++) {
-        if (score[i] == max) {
-            place.push(dados[i])
-            score.splice(i, 1)
-            dados.splice(i, 1)
-        }
+    if (users.nick == nick) {
+        linha.style.backgroundColor = 'darkgreen'
     }
 
-    if (place.length == users.length) {
-        montar()
-        return
-    } else {
-        ordenar()
+    const posicao = document.createElement('td')
+
+    if (users[i - 1]?.score != users[i].score) {
+        ultimaPosicao++
     }
-}
 
-function montar() {
-    for (let l of place) {
-        p++
+    posicao.innerHTML = ultimaPosicao
 
-        const position = document.createElement('position')
-        position.className = 'position'
-        if (nick == l[0]) {position.style.color = 'yellow'}
-        document.getElementById('Ranking').appendChild(position)
+    const nome = document.createElement('td')
+    nome.innerHTML = users[i].nick
 
-        const positionRanking = document.createElement('pr')
-        positionRanking.className = 'hashe'
-        positionRanking.innerHTML = p
-        position.appendChild(positionRanking)
+    const score = document.createElement('td')
+    score.innerHTML = users[i].score
 
-        const nickRanking = document.createElement('nr')
-        nickRanking.className = 'nick'
-        nickRanking.innerHTML = l[0]
-        position.appendChild(nickRanking)
+    linha.append(posicao, nome, score)
 
-        const scoreRanking = document.createElement('sr')
-        scoreRanking.className = 'score'
-        scoreRanking.innerHTML = l[1]
-        position.appendChild(scoreRanking)
-    }
+    ranking.appendChild(linha)
 }
 
 function sair() {

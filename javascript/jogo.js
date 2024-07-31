@@ -140,13 +140,13 @@ function montarTela() {
 
     for (const n of p) {
 
-        const palavraSecreta = document.createElement('ps')
+        const palavraSecreta = document.createElement('tr')
         palavraSecreta.className = 'palavra-secreta'
-        document.getElementById('visor').appendChild(palavraSecreta)
+        document.querySelector('table').appendChild(palavraSecreta)
 
         for (const i of n) {
 
-            const letra = document.createElement('letra')
+            const letra = document.createElement('td')
             letra.className = 'letras'
             palavraSecreta.appendChild(letra)
 
@@ -168,13 +168,13 @@ function montarTela() {
 
 // teclas/letras/
 
-let tabelaL = [];
+let letraschamadas = [];
 let L = 0;
 let h = 0;
 let d = 1;
 
 function verificar(letra) {
-    tabelaL.push(letra)
+    letraschamadas.push(letra)
 
     if (nomesecreto.toUpperCase().includes(letra)) {
         for (let i = 0; i < nome.length; i++) {
@@ -198,7 +198,7 @@ function verificar(letra) {
         h = 1
     }
 
-    if (L == nome.length - h) {
+    if (L >= nome.length - h) {
         if (USB.length == palavras.length) {
             modal('certificado')
 
@@ -282,15 +282,15 @@ function restaurar() {
         document.getElementById('Pedirdica').style.cursor = "pointer"
     }
 
-    for (let i = 0; i < tabelaL.length; i++) {
-        let id = 'tecla-' + tabelaL[i]
+    for (let i = 0; i < letraschamadas.length; i++) {
+        let id = 'tecla-' + letraschamadas[i]
 
         document.getElementById(id).style.color = "white"
         document.getElementById(id).style.cursor = "pointer"
         document.getElementById(id).disabled = false
     }
 
-    tabelaL = []
+    letraschamadas = []
 };
 
 let cUsadas = 40;
@@ -345,13 +345,13 @@ function dicas(V) {
 
 
     if (V == "letra") {
-        const indice = sort(palavraSort.nome)
-        if (tabelaL.includes(palavraSort.nome[indice].toUpperCase())) {
+        const indice = sort(nomesecreto)
+        if (letraschamadas.includes(nomesecreto[indice].toUpperCase())) {
             dicas('letra')
         } else {
             dica--
             chances--
-            verificar(palavraSort.nome[indice].toUpperCase())
+            verificar(nomesecreto[indice].toUpperCase())
         }
     }
 
