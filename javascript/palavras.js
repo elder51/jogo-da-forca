@@ -339,365 +339,358 @@ const palavras = [
         nome: "Ostra",
         categoria: "Comida",
         dica1:"Molusco",
-        dica2:"",
-        dica3:""
+        dica2:"Praia",
+        dica3:"Formato de concha"
     },
     {
         nome: "Palmito",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Muito consumido na Ásia",
+        dica2:"É macio",
+        dica3:"Formato cilíndrico"
     },
     {
         nome: "Pimentão",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Pode ser verde, vermelho ou amarelo",
+        dica2:"Diferentes sabores",
+        dica3:"Hortaliça"
     },
     {
         nome: "Peixe",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Carne branca",
+        dica2:"Vem do mar",
+        dica3:"*****-boi/*****-palhaço/*****-anjo"
     },
     {
         nome: "Queijo",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Pode ter buracos",
+        dica2:"Salgado, doce ou insosso",
+        dica3:"Pode ser branco, amarelo ou roxo"
     },
     {
         nome: "Quibe",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Bolinho",
+        dica2:"Recheado",
+        dica3:"Leva carne"
     },
     {
         nome: "Quiabo",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É verde",
+        dica2:"Esguio",
+        dica3:"Sabor suave e adocicado"
     },
     {
         nome : "Risoto",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Prato italiano",
+        dica2:"Sua base é arroz",
+        dica3:"Pode levar carne ou legumes"
     },
     {
         nome: "Rabanete",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Tem da cor roxa e vermelha",
+        dica2:"Hortaliça",
+        dica3:"É uma raiz"
     },
     {
         nome: "Ravioli",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Prato italiano",
+        dica2:"Pastéis de massa",
+        dica3:"Variados recheios"
     },
     {
         nome: "Salgadinho",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Mais consumido em festas",
+        dica2:"Pode ser de queijo",
+        dica3:"É salgado"
     },
     {
         nome: "Sushi",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Peixe",
+        dica2:"Formato cilíndrico",
+        dica3:"Comida asiática"
     },
     {
         nome: "Salsicha",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É comprida",
+        dica2:"Embutida",
+        dica3:"É vendida em pacotes"
     },
     {
         nome: "Salada",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Saudável",
+        dica2:"Verduras e legumes",
+        dica3:"Acompanhamento"
     },
     {
         nome: "Tapioca",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É branca",
+        dica2:"Beiju",
+        dica3:"Vários recheios"
     },
     {
         nome: "Torta",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Salgada ou doce",
+        dica2:"Frango é o recheio mais comum",
+        dica3:"Não é reta"
     },
     {
         nome: "Trufa",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Usado em manteigas, vinagres ou azeites",
+        dica2:"Desenvolve-se sob a terra",
+        dica3:"Também pode ser um doce"
     },
     {
         nome: "Vatapá",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Caldo de camarão",
+        dica2:"Prato típico brasileiro",
+        dica3:"Leva fubá"
     },
     {
         nome : "Vinho",
         categoria : "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Uva é seu principal ingrediente",
+        dica2:"Pode ser conservado",
+        dica3:"Alcoólico"
     },
     {
         nome: "Vagem",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Fino e comprido",
+        dica2:"Feijão",
+        dica3:"Consumida ainda verde"
     },
     {
         nome: "Xerém",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Prato típico de Portugal",
+        dica2:"Farinha de milho",
+        dica3:"É amarelo"
     },
     {
         nome: "Yakisoba",
         categoria: "Comida",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Comida asiática",
+        dica2:"Leva carne e legumes",
+        dica3:"Macarrão grosso"
     },
     {
         nome: "Alicate",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Cabo geralmente vermelho",
+        dica2:"Ferramenta",
+        dica3:"Sua função é pressionar"
     },
     {
         nome: "Aparelho",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Ajusta os dentes",
+        dica2:"Pode ser de metal, cerâmica, safira ou policarbonato",
+        dica3:"Ligas"
     },
     {
         nome: "Almofada",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É confortável",
+        dica2:"Decoração",
+        dica3:"Geralmente usado na sala"
     },
     {
         nome: "Bracelete",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Acessório",
+        dica2:"Usa no braço",
+        dica3:"Se assemelha com uma pulseira"
     },
     {
         nome: "Bacia",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Geralmente é de alumínio",
+        dica2:"Tem formato circular",
+        dica3:"É fundo"
     },
     {
         nome: "Brinco",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Acessório",
+        dica2:"Vários formatos",
+        dica3:"Se usa na orelha"
     },
     {
         nome: "Balde",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É de plástico ou alumínio",
+        dica2:"Pode ser de tinta ou de manteiga",
+        dica3:"Pode ter alças"
     },
     {
         nome: "Carta",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É envelopado",
+        dica2:"Escrito a mão",
+        dica3:"Destinatário / Remetente"
     },
     {
         nome: "Cadeira",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Pode ser de plástico ou madeira",
+        dica2:"Usada em cômodos",
+        dica3:"Serve pra sentar"
     },
     {
         nome: "Computador",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Aparelho eletrônico",
+        dica2:"Tem periféricos",
+        dica3:"Sistemas operacionais"
     },
     {
         nome: "Caneta",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Tinta azul, preta ou vermelha",
+        dica2:"Pode ser esferográfica",
+        dica3:"Usada geralmente em provas"
     },
     {
         nome: "Disco",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"É redondo",
+        dica2:"Música",
+        dica3:"Relíquia"
     },
     {
         nome: "Despertador",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Tempo",
+        dica2:"Serve como lembrete",
+        dica3:"Faz barulho"
     },
     {
         nome: "Dicionário",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Palavras",
+        dica2:"Idiomas",
+        dica3:"Significados"
     },
     {
         nome: "Dentadura",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Molde",
+        dica2:"Feito de acrílico",
+        dica3:"Pessoas idosas usam"
     },
     {
         nome: "Escada",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Subida e descida",
+        dica2:"Corrimão",
+        dica3:"Degraus"
     },
     {
         nome: "Escova",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Dentes",
+        dica2:"Cabelo",
+        dica3:"Higiene"
     },
     {
         nome: "Espelho",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Vidro",
+        dica2:"Você",
+        dica3:"Reflexo"
     },
     {
         nome: "Esmalte",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Tinta",
+        dica2:"Unhas",
+        dica3:"Mulheres"
     },
     {
         nome: "Envelope",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Carta",
+        dica2:"Recipiente",
+        dica3:"Endereço e selo"
     },
     {
         nome: "Frasco",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Recipiente",
+        dica2:"Geralmente é de plástico",
+        dica3:"Pode ser redondo"
     },
     {
         nome: "Fivela",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Cintura",
+        dica2:"Prende",
+        dica3:"Cinto"
     },
     {
         nome: "Frigideira",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Cozinha",
+        dica2:"Frita",
+        dica3:"Possui cabo"
     },
     {
         nome: "Garfo",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Dentes",
+        dica2:"Macarrão",
+        dica3:"Talher"
     },
     {
         nome: "Guarda chuva",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Protege",
+        dica2:"Você pode segurar",
+        dica3:"Chuva"
     },
     {
         nome: "Guitarra",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Cordas",
+        dica2:"Instrumento musical",
+        dica3:"Acordes"
     },
     {
         nome: "Grampeador",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Prende",
+        dica2:"Usado em papel",
+        dica3:"Grampo"
     },
     {
         nome: "Gaiola",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Abriga animais pequenos",
+        dica2:"Geralmente é de ferro",
+        dica3:"Água e comida"
     },
     {
         nome: "Hidrante",
         categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
-    },
-    {
-        nome: "Haste",
-        categoria: "Objeto",
-        dica1:"",
-        dica2:"",
-        dica3:""
+        dica1:"Água",
+        dica2:"Icêndio",
+        dica3:"Cachorro"
     },
     {
         nome: "Impressora",
