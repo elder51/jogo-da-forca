@@ -17,9 +17,9 @@ const nick = JSON.parse(localStorage.getItem('nick'));
 if (nick) {
     for (let user of users) {
         if (nick == user.nick) {
-            score = user.score
-            if (user.usb) { USB = user.usb }
-            if (user.dica) { dica = user.dica }
+            score = parseInt(user.score)
+            USB = user.usb
+            dica = user.dica
             break
         }
     }
@@ -91,7 +91,7 @@ function reiniciar() {
         restaurar()
         verificarSort()
         if(nick) {scoreload()}
-    }, 1000)
+    }, 500)
 };
 
 
@@ -295,9 +295,8 @@ function restaurar() {
 
 let cUsadas = 40;
 function modal(V) {
-
     if (V == 'certificado') {
-        score = score + lErradas + cUsadas
+        score = (score + (lErradas + cUsadas))
         dialog.showModal() 
         setTimeout(() => {
             scoreload()
@@ -307,24 +306,21 @@ function modal(V) {
     }
 
     if (V == 'acertou') {
+        score =  lErradas + cUsadas + score
         setTimeout(() => {
-            score = score + lErradas + cUsadas
             if (tentativas == 0) {
                 dica++
             }
             colocarFrase(frasePalavraCorreta)
-        }, 1000)
+        }, 500)
 
     }
 
     if (V == 'errou') {
+        score = Math.floor(score - (score / 10))
         setTimeout(() => {
-            score = (score - (score / 10))
-
             colocarFrase(frasePalavraErrada)
-        }, 1000)
-
-
+        }, 500)
     }
 };
 
@@ -445,7 +441,7 @@ function scoreload() {
                 user.score = score
                 user.dica = dica
                 if(USB == palavras) {
-                    user.usb == []
+                    user.usb = []
                 } else {
                     USB.pop()
                     user.usb = USB
@@ -454,20 +450,21 @@ function scoreload() {
                 break
             }
         }
-    }
-    
+    } 
 };
 
 function sair(V) {
-    if (nick) {
-        if (V == 'R') {
-            window.location.replace("./ranking.html");
+    setTimeout(()=>{
+        if (nick) {
+            if (V == 'R') {
+                window.location.replace("./ranking.html");
+                return
+            }
+        }
+    
+        if (V == 'M') {
+            window.location.replace("./index.html");
             return
         }
-    }
-
-    if (V == 'M') {
-        window.location.replace("./index.html");
-        return
-    }
+    },500)
 }

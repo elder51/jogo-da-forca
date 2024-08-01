@@ -1,7 +1,7 @@
 const ranking = document.querySelector('table')
 const menssage = document.getElementById('menssage')
 const users = JSON.parse(localStorage.getItem('users')) ?? []
-const nick = JSON.parse(localStorage.getItem('nick'))
+const nick = JSON.parse(localStorage.getItem('nick')) ?? "N"
 
 users.sort((a, b) => b.score - a.score)
 
@@ -10,7 +10,7 @@ let ultimaPosicao = 0
 for (let i = 0; i < users.length; i++) {
     const linha = document.createElement('tr')
 
-    if (users.nick == nick) {
+    if (users[i].nick == nick) {
         linha.style.backgroundColor = 'darkgreen'
     }
 

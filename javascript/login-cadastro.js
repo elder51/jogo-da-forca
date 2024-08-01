@@ -82,7 +82,7 @@ function criarlogin(event) {
     const answer = CryptoJS.SHA256(form.get('answer')).toString()
     const score = '0'
     const usb = []
-    const dica = '0'
+    const dica = '5'
 
     if(users) {
         for(let user of users) {
