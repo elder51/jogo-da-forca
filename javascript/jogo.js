@@ -106,7 +106,7 @@ function continuar() {
         document.getElementById("chances").innerHTML = chances
         restaurar()
         verificarSort()
-    }, 1000)
+    }, 500)
 };
 
 // Interface jogo
@@ -222,38 +222,38 @@ function trocarStyle(id, letra) {
     }
 };
 
-let lErradas = 60;
+let lErradas = 0;
 function trocarImg(tentativas) {
     if (tentativas <= 6) {
         switch (tentativas) {
             case 1:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-1.webp)";
-                lErradas = 50
+                lErradas = 15
                 break;
             case 2:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-2.webp)";
-                lErradas = 40
+                lErradas = 30
                 break;
             case 3:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-3.webp)";
-                lErradas = 30
+                lErradas = 45
                 break;
             case 4:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-4.webp)";
-                lErradas = 20
+                lErradas = 60
                 break;
             case 5:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-5.webp)";
-                lErradas = 10
+                lErradas = 75
                 break;
             case 6:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-6.webp)";
-                lErradas = 0
+                lErradas = 75
                 break;
 
             default:
                 document.getElementById("image").style.backgroundImage = "url(./img/forca-0.webp)";
-                lErradas = 60
+                lErradas = 0
                 break;
         }
     } else {
@@ -293,10 +293,10 @@ function restaurar() {
     letraschamadas = []
 };
 
-let cUsadas = 40;
+let cUsadas = 0;
 function modal(V) {
     if (V == 'certificado') {
-        score = (score + (lErradas + cUsadas))
+        score = (score + (100 - (lErradas + cUsadas)))
         dialog.showModal() 
         setTimeout(() => {
             scoreload()
@@ -306,7 +306,7 @@ function modal(V) {
     }
 
     if (V == 'acertou') {
-        score =  lErradas + cUsadas + score
+        score =  (score + (100 - (lErradas + cUsadas)))
         setTimeout(() => {
             if (tentativas == 0) {
                 dica++
@@ -387,17 +387,17 @@ function dicas(V) {
 
     switch (chances) {
         case 0:
-            cUsadas = 0
+            cUsadas = 25
             break;
         case 1:
-            cUsadas = 20
+            cUsadas = 10
             break;
         case 2:
-            cUsadas = 35
+            cUsadas = 5
             break;
 
         default:
-            cUsadas = 40
+            cUsadas = 0
             break;
     }
 
