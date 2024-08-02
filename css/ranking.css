@@ -11,6 +11,7 @@ body {
     margin: 0px;
     
 }
+
 .title {
     font-family: "Sriracha", cursive;
     font-size: 100px;
@@ -18,6 +19,7 @@ body {
     text-align: center;
     margin-top: 0px;
 }
+
 table {
     width: 90%;
     font-family: "Shadows Into Light", cursive;
@@ -26,6 +28,7 @@ table {
     border: 3px solid;
     border-collapse: collapse;
 }
+
 th,td {
     border: 3px solid;
     text-align: center;

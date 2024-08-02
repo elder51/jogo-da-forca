@@ -1,5 +1,5 @@
 const user = document.getElementById("nick");
-let nome = null;
+let nome;
 let nUsuario = JSON.parse(localStorage.getItem('nick'));
 
 if(nUsuario){
@@ -65,17 +65,18 @@ function handlesubmit(event) {
         document.getElementById('log-out').style.display = 'block'
 
         localStorage.setItem('nick',JSON.stringify(userfound.nick))
-        fecharLogin()
     }
+
+    fecharLogin()
 };  
 
 function criarlogin(event) {
     event.preventDefault()
-    
+
     const form = new FormData(event.target)
 
     let users = JSON.parse(localStorage.getItem('users'))
-    
+
     const nick = form.get('user')
     const password = CryptoJS.SHA256(form.get('password')).toString()
     const question = form.get('question')
@@ -84,9 +85,9 @@ function criarlogin(event) {
     const usb = []
     const dica = '5'
 
-    if(users) {
-        for(let user of users) {
-            if(nick == user.nick){
+    if(users){
+        for (let user of users) {
+            if (nick == user.nick) {
                 document.getElementById('userExist').innerHTML = 'Usuário já cadastrado'
                 return
             }
@@ -105,16 +106,24 @@ function criarlogin(event) {
         usb
     }
 
-    if(!users) {
-        localStorage.setItem('users',JSON.stringify([]))
+    if (!users) {
+        localStorage.setItem('users', JSON.stringify([]))
         users = []
     }
 
     users.push(userObj)
 
-    localStorage.setItem('users',JSON.stringify(users))
+    localStorage.setItem('users', JSON.stringify(users))
+
+    user.innerHTML = nick
+    document.getElementById("log-in").style.display = "none"
+    document.getElementById("userInter").style.display = "flex"
+    document.getElementById('log-out').style.display = 'block'
+
+    localStorage.setItem('nick',JSON.stringify(nick))
     
-    fecharLogin()  
+
+    fecharLogin()
 };
 
 function Recovery(event) {
