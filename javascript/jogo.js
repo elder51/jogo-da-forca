@@ -74,6 +74,96 @@ const palavras = [
         dica1: "Salsicha",
         dica2: "Molho",
         dica3: "Vai querer completo?"
+    },
+    {
+        nome: "Amendoim",
+        categoria: "Comida",
+        dica1: "Possui Casca",
+        dica2: "Fornece outras comidas",
+        dica3: "Paçoca"
+    },
+    {
+        nome: "Arroz",
+        categoria: "Comida",
+        dica1: "Branco",
+        dica2: "Grão",
+        dica3: "Alomoço"
+    },
+    {
+        nome: "Amora",
+        categoria: "Comida",
+        dica1: "Cor Preta",
+        dica2: "Antioxidante",
+        dica3: "Cacho",
+    },
+    {
+        nome: "Abacaxi",
+        categoria: "Comida",
+        dica1: "Possui cor amarela",
+        dica2: "Coroa",
+        dica3: "Possui Casca"
+    },{
+        nome: "Balde",
+        categoria: "Objeto",
+        dica1:"É de plástico ou alumínio",
+        dica2:"Pode ser de tinta ou de manteiga",
+        dica3:"Pode ter alças"
+    },
+    {
+        nome: "Carta",
+        categoria: "Objeto",
+        dica1:"É envelopado",
+        dica2:"Escrito a mão",
+        dica3:"Destinatário / Remetente"
+    },
+    {
+        nome: "Cadeira",
+        categoria: "Objeto",
+        dica1:"Pode ser de plástico ou madeira",
+        dica2:"Usada em cômodos",
+        dica3:"Serve pra sentar"
+    },
+    {
+        nome: "Computador",
+        categoria: "Objeto",
+        dica1:"Aparelho eletrônico",
+        dica2:"Tem periféricos",
+        dica3:"Sistemas operacionais"
+    },
+    {
+        nome: "Caneta",
+        categoria: "Objeto",
+        dica1:"Tinta azul, preta ou vermelha",
+        dica2:"Pode ser esferográfica",
+        dica3:"Usada geralmente em provas"
+    },
+    {
+        nome: "Disco",
+        categoria: "Objeto",
+        dica1:"É redondo",
+        dica2:"Música",
+        dica3:"Relíquia"
+    },
+    {
+        nome: "Despertador",
+        categoria: "Objeto",
+        dica1:"Tempo",
+        dica2:"Serve como lembrete",
+        dica3:"Faz barulho"
+    },
+    {
+        nome: "Dicionário",
+        categoria: "Objeto",
+        dica1:"Palavras",
+        dica2:"Idiomas",
+        dica3:"Significados"
+    },
+    {
+        nome: "Dentadura",
+        categoria: "Objeto",
+        dica1:"Molde",
+        dica2:"Feito de acrílico",
+        dica3:"Pessoas idosas usam"
     }
 ];
 
