@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap);
 
 
 body {
@@ -126,12 +127,19 @@ table {
 
 #dialogo {
     border: transparent;
-    height: 90%;
-    width: 68%;
+    height: 600px;
+    width: 915px;
     background-image: url(../img/certificado.webp);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#userNick {
+    text-align: center;
+    margin-top: 210px;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 50px;
 }
 
 .dica{

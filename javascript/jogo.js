@@ -298,9 +298,10 @@ function modal(V) {
     if (V == 'certificado') {
         score = (score + (100 - (lErradas + cUsadas)))
         dialog.showModal() 
+        document.getElementById('userNick').innerHTML = nick ?? ''
         setTimeout(() => {
             scoreload()
-            sair('R')
+            sair()
         }, 10000)
 
     }
@@ -453,18 +454,18 @@ function scoreload() {
     } 
 };
 
-function sair(V) {
-    setTimeout(()=>{
+function sair() {
+    scoreload()
+    setTimeout(() => {
         if (nick) {
-            if (V == 'R') {
-                window.location.replace("./ranking.html");
-                return
-            }
-        }
-    
-        if (V == 'M') {
-            window.location.replace("./index.html");
+
+            window.location.replace("./ranking.html");
             return
+
         }
-    },500)
+
+        window.location.replace("./index.html");
+        return
+
+    }, 500)
 }

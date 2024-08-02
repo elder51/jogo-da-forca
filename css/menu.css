@@ -62,7 +62,7 @@ body{
     border-bottom: 2px solid;
     border-radius: 5px;
     display: inline-flex;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 25px;
     margin: 0px;
     padding: 0px;
@@ -77,7 +77,7 @@ body{
     color: white;
     background-color: transparent;
     display: inline-flex;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 25px;
     margin: 0px;
     padding: 0px;

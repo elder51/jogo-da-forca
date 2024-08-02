@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap);
 
 
 
@@ -22,7 +23,7 @@ body {
 
 table {
     width: 90%;
-    font-family: "Shadows Into Light", cursive;
+    font-family: "Noto Serif", serif;
     font-size: 50px;
     color: white;
     border: 3px solid;
