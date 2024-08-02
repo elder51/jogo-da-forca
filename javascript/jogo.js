@@ -105,65 +105,65 @@ const palavras = [
     },{
         nome: "Balde",
         categoria: "Objeto",
-        dica1:"É de plástico ou alumínio",
-        dica2:"Pode ser de tinta ou de manteiga",
-        dica3:"Pode ter alças"
+        dica1: "É de plástico ou alumínio",
+        dica2: "Pode ser de tinta ou de manteiga",
+        dica3: "Pode ter alças"
     },
     {
         nome: "Carta",
         categoria: "Objeto",
-        dica1:"É envelopado",
-        dica2:"Escrito a mão",
-        dica3:"Destinatário / Remetente"
+        dica1: "É envelopado",
+        dica2: "Escrito a mão",
+        dica3: "Destinatário / Remetente"
     },
     {
         nome: "Cadeira",
         categoria: "Objeto",
-        dica1:"Pode ser de plástico ou madeira",
-        dica2:"Usada em cômodos",
-        dica3:"Serve pra sentar"
+        dica1: "Pode ser de plástico ou madeira",
+        dica2: "Usada em cômodos",
+        dica3: "Serve pra sentar"
     },
     {
         nome: "Computador",
         categoria: "Objeto",
-        dica1:"Aparelho eletrônico",
-        dica2:"Tem periféricos",
-        dica3:"Sistemas operacionais"
+        dica1: "Aparelho eletrônico",
+        dica2: "Tem periféricos",
+        dica3: "Sistemas operacionais"
     },
     {
         nome: "Caneta",
         categoria: "Objeto",
-        dica1:"Tinta azul, preta ou vermelha",
-        dica2:"Pode ser esferográfica",
-        dica3:"Usada geralmente em provas"
+        dica1: "Tinta azul, preta ou vermelha",
+        dica2: "Pode ser esferográfica",
+        dica3: "Usada geralmente em provas"
     },
     {
         nome: "Disco",
         categoria: "Objeto",
-        dica1:"É redondo",
-        dica2:"Música",
-        dica3:"Relíquia"
+        dica1: "É redondo",
+        dica2: "Música",
+        dica3: "Relíquia"
     },
     {
         nome: "Despertador",
         categoria: "Objeto",
-        dica1:"Tempo",
-        dica2:"Serve como lembrete",
-        dica3:"Faz barulho"
+        dica1: "Tempo",
+        dica2: "Serve como lembrete",
+        dica3: "Faz barulho"
     },
     {
         nome: "Dicionário",
         categoria: "Objeto",
-        dica1:"Palavras",
-        dica2:"Idiomas",
-        dica3:"Significados"
+        dica1: "Palavras",
+        dica2: "Idiomas",
+        dica3: "Significados"
     },
     {
         nome: "Dentadura",
         categoria: "Objeto",
-        dica1:"Molde",
-        dica2:"Feito de acrílico",
-        dica3:"Pessoas idosas usam"
+        dica1: "Molde",
+        dica2: "Feito de acrílico",
+        dica3: "Pessoas idosas usam"
     }
 ];
 
